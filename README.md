@@ -1,1 +1,1 @@
-# data_science_for_psycholinguistics
+# 언어심리학을 위한 데이터 사이언스 수업자료를 올리는 공간입니다.
