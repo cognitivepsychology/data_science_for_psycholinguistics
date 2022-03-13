@@ -2,4 +2,4 @@
 
 ## 1. 2주차 수업자료: R의 기초
 
-* **[week2.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/about/week2.html):** 2주차 수업자료: R의 기초. 해당 자료를 열람하려면 링크를 클릭할 것.
+* **[week2.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week2.html):** 2주차 수업자료: R의 기초. 해당 자료를 열람하려면 링크를 클릭할 것.
