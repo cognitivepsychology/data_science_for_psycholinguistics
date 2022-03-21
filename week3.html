@@ -387,7 +387,7 @@ tidyverse를 사용해 데이터 사이언스 프로젝트 수행하기</a></li>
 tidyverse를 사용한 데이터 사이언스 프로젝트의 수행절차</a>
 <ul>
 <li><a href="#데이터-반입import">1) 데이터 반입(Import)</a></li>
-<li><a href="#데이터-정돈tidy">2) 데이터 정돈(Tidy)</a></li>
+<li><a href="#데이터-정제tidy">2) 데이터 정제(Tidy)</a></li>
 <li><a href="#데이터-변형transform">3) 데이터 변형(Transform)</a></li>
 <li><a href="#데이터-시각화visualize">4) 데이터
 시각화(Visualize)</a></li>
@@ -395,7 +395,7 @@ tidyverse를 사용한 데이터 사이언스 프로젝트의 수행절차</a>
 <li><a href="#소통communication">6) 소통(Communication)</a></li>
 <li><a href="#프로그래밍programming">7) 프로그래밍(Programming)</a></li>
 </ul></li>
-<li><a href="#데이터-정돈하기tidy-data">(3) 데이터 정돈하기(tidy
+<li><a href="#데이터-정제하기tidy-data">(3) 데이터 정제하기(tidy
 data)</a>
 <ul>
 <li><a href="#설명">1) 설명</a></li>
@@ -427,7 +427,7 @@ data)</a>
 내리는 과정을 다루는 학문분야.</li>
 <li>주기(lifecycle)
 <ol style="list-style-type: decimal">
-<li><strong>포착(Capture):</strong> 구조화된 또는 구조화되지 않은
+<li><strong>수집(Capture):</strong> 구조화된 또는 구조화되지 않은
 원자료(raw data)를 수집하는 단계. [EX] 데이터 획득, 데이트 추출.</li>
 <li><strong>점검(Maintain):</strong> 원자료를 취합하여 사용 가능한
 형태로 정리하는 단계. [EX] 데이터 정리(data cleansing), 데이터 처리(data
@@ -435,8 +435,8 @@ processing).</li>
 <li><strong>처리(Process):</strong> 준비된 자료의 패턴, 범위, 편향 등을
 조사하여 그것이 예측분석에 얼마나 유용하게 적용될 수 있는지를 판단하는
 단계. [EX] 데이터 모델링, 데이터 분류, 데이터 요약.</li>
-<li><strong>분석(Aanalyze):</strong> 데이터에 대한 다양한 분석을
-수행하는 단계. 데이터 사이언스의 주기에서 가장 중요. [EX]
+<li><strong>분석(Analyze):</strong> 데이터에 대한 다양한 분석을 수행하는
+단계. 데이터 사이언스의 주기에서 가장 중요. [EX]
 탐색적/확인적(exploratory/confirmatory) 분석, 예측분석(predictive
 analysis), 회귀분석.</li>
 <li><strong>소통(Communication):</strong> 도표, 그림, 보고서 같은 가독성
@@ -461,7 +461,7 @@ analysis), 회귀분석.</li>
 <li>구조화된 또는 구조화되지 않은 데이터를 다양한 출처로부터
 수집함.</li>
 <li>데이터가 수집되면, 원자료를 처리하여 분석에 적합한 포맷으로 변환함.
-데이터의 통일성과 정확성을 확보하기 위해 데이터를 정돈하고 타당성을
+데이터의 통일성과 정확성을 확보하기 위해 데이터를 정제하고 타당성을
 점검하는 절차를 진행하게 됨.</li>
 <li>데이터를 사용 가능한 형태로 변환하고 나면, 머신러닝 알고리즘(machine
 learning algorithm)이나 통계모형(statistical model) 같은 분석 시스템에
@@ -478,9 +478,9 @@ learning algorithm)이나 통계모형(statistical model) 같은 분석 시스�
 <h2>(1) tidyverse를 사용해 데이터 사이언스 프로젝트 수행하기</h2>
 <ul>
 <li>본 장의 개요: 데이터 저장의 단위는 데이터 프레임이 가장 이상적. 본
-장에서는 tidyverse를 사용하여 데이터를 정돈하고 변형하는 방법에 대해
+장에서는 tidyverse를 사용하여 데이터를 정제하고 변형하는 방법에 대해
 간단히 알아보고자 함.</li>
-<li>tidyverse의 정의: 데이터를 반입, 정돈, 변형, 시각화, 모델링하는
+<li>tidyverse의 정의: 데이터를 반입, 정제, 변형, 시각화, 모델링하는
 과정에 사용된 패키지들의 모음.
 <ol style="list-style-type: decimal">
 <li><strong>dplyr:</strong> 데이터 프레임 조작에 사용.</li>
@@ -512,11 +512,11 @@ library(tidyverse)</code></pre>
 <li>데이터를 R로 불러들이지 못하면, 데이터 사이언스가 불가능함!</li>
 </ul>
 </div>
-<div id="데이터-정돈tidy" class="section level3">
-<h3>2) 데이터 정돈(Tidy)</h3>
+<div id="데이터-정제tidy" class="section level3">
+<h3>2) 데이터 정제(Tidy)</h3>
 <ul>
 <li>반입한 데이터를 일관성 있는 형식으로 저장하는 단계.</li>
-<li>정돈된 데이터(tidy data) = 각각의 열(column)이 변수이고, 각각의
+<li>정제된 데이터(tidy data) = 각각의 열(column)이 변수이고, 각각의
 행(row)이 관찰값에 해당하는 데이터 형식.</li>
 <li>일관된 구조의 데이터를 사용해야 데이터를 사용한 문제해결에 온전히
 집중할 수 있음.</li>
@@ -530,7 +530,7 @@ library(tidyverse)</code></pre>
 변수를 바탕으로 새로운 변수를 생성하고([EX] 거리와 시간를 통해 속도
 계산하기), 요약통계(summary statistics: [EX] 빈도, 평균, 표준편차)를
 계산하는 단계.</li>
-<li>데이터 정돈과 변형을 통틀어 data wrangling<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>이라고 부름.</li>
+<li>데이터 정제과 변형을 통틀어 data wrangling<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>이라고 부름.</li>
 </ul>
 </div>
 <div id="데이터-시각화visualize" class="section level3">
@@ -575,19 +575,19 @@ lexicality / 결과변수: 반응시간).</li>
 수행절차</strong> <img src="data:image/png;base64,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" /></p>
 </div>
 </div>
-<div id="데이터-정돈하기tidy-data" class="section level2">
-<h2>(3) 데이터 정돈하기(tidy data)</h2>
+<div id="데이터-정제하기tidy-data" class="section level2">
+<h2>(3) 데이터 정제하기(tidy data)</h2>
 <div id="설명" class="section level3">
 <h3>1) 설명</h3>
 <ul>
-<li>정돈된 데이터 프레임(tidy data frame): 각각의 행이 하나의 관찰값을
+<li>정제된 데이터 프레임(tidy data frame): 각각의 행이 하나의 관찰값을
 나타내고 각각의 열이 하나의 변수를 나타내는 형식의 데이터 프레임.</li>
-<li>tidyverse를 최적화된 환경에서 사용하려면 반드시 정돈된 포맷이어야
+<li>tidyverse를 최적화된 환경에서 사용하려면 반드시 정제된 포맷이어야
 함.</li>
 </ul>
 <pre class="r"><code>library(dslabs)
 data(&quot;murders&quot;)
-# 2010년 미국의 주별 총기 살인사건 데이터셋
+# 2010년 미국의 주별 총기살인 사건 데이터셋
 head(murders)</code></pre>
 <pre><code>##        state abb region population total
 ## 1    Alabama  AL  South    4779736   135
@@ -612,12 +612,12 @@ head(murders)</code></pre>
 <div id="실습" class="section level3">
 <h3>2) 실습</h3>
 <ul>
-<li>co2 데이터셋은 정돈된 데이터인가?
+<li>co2 데이터셋은 정제된 데이터인가?
 <ol style="list-style-type: lower-alpha">
 <li>그렇다: 각 행별로 한 해의 관찰값을 가지고 있다.</li>
 <li>아니다: 문자 벡터를 지닌 열이 적어도 하나는 있어야 한다.</li>
 <li>아니다: 데이터 프레임이 아닌 매트릭스이다.</li>
-<li>아니다: 정돈된 데이터가 되려면 세 개의 열(year, month, value)로
+<li>아니다: 정제된 데이터가 되려면 세 개의 열(year, month, value)로
 구성되어야 하고, 행당 각각의 CO<sup>2</sup> 값이 있어야 한다.</li>
 </ol></li>
 </ul>
@@ -633,7 +633,7 @@ head(murders)</code></pre>
 ##  [91] 322.24 320.20 318.48 317.94 319.63 320.87 322.17 322.34 322.88 324.25</code></pre>
 <pre><code>## [1] &quot;ts&quot;</code></pre>
 <ul>
-<li>co2 데이터셋을 정돈된 데이터로 변환한 경우</li>
+<li>co2 데이터셋을 정제된 데이터로 변환한 경우</li>
 </ul>
 <pre><code>## # A tibble: 6 x 5
 ##   date      measure date_chr month  year
@@ -646,8 +646,8 @@ head(murders)</code></pre>
 ## 6 6 1959       318  6 1959       6  1959</code></pre>
 <pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
 <ul>
-<li>BOD는 정돈된 데이터인가?</li>
-<li>ChickWeight는 정돈된 데이터인가?</li>
+<li>BOD는 정제된 데이터인가?</li>
+<li>ChickWeight는 정제된 데이터인가?</li>
 </ul>
 </div>
 </div>
@@ -665,7 +665,7 @@ head(murders)</code></pre>
 </ul>
 <pre class="r"><code>library(dslabs)
 data(&quot;murders&quot;)</code></pre>
-<pre class="r"><code># 10만 명당 총기 살해 피해자 수를 계산한 열(rate)을 추가할 경우.
+<pre class="r"><code># 10만 명당 총기살해 사망자 수를 계산한 열(rate)을 추가할 경우.
 murders &lt;- mutate(murders, rate = total / population * 100000)
 head(murders)</code></pre>
 <pre><code>##        state abb region population total     rate
@@ -684,7 +684,7 @@ head(murders)</code></pre>
 <li><strong>기술방법:</strong>
 <code>filter(데이터 프레임 이름, 필터링 조건)</code></li>
 </ul>
-<pre class="r"><code># 10만 명당 총기 살해 피해자 수가 0.71보다 작거나 같은 사례만 필터링할 경우.
+<pre class="r"><code># 10만 명당 총기살해 사망자 수가 0.71보다 작거나 같은 사례만 필터링할 경우.
 murders.1 &lt;- filter(murders, rate &lt;= 0.71)
 head(murders.1)</code></pre>
 <pre><code>##           state abb        region population total      rate
@@ -702,7 +702,7 @@ head(murders.1)</code></pre>
 <li><strong>기술방법:</strong>
 <code>select(데이터 프레임 이름, 선택할 칼럼1, 선택할 칼럼2, ...)</code></li>
 </ul>
-<pre class="r"><code># murders, state, region, rate 네 열만 선택할 경우.
+<pre class="r"><code># state, region, rate 세 열만 선택할 경우.
 murders.2 &lt;- select(murders, state, region, rate)
 head(murders.2)</code></pre>
 <pre><code>##        state region     rate
@@ -754,7 +754,7 @@ head(murders.mil)</code></pre>
 ## 4   Arkansas  AR  South    2915918    93 3.189390               2.915918
 ## 5 California  CA   West   37253956  1257 3.374138              37.253956
 ## 6   Colorado  CO   West    5029196    65 1.292453               5.029196</code></pre>
-<pre class="r"><code># 10만 명당 총기살해 사망율의 순위를 매길 경우.
+<pre class="r"><code># 10만 명당 총기살해 사망자 수의 순위를 매길 경우.
 murders.rate &lt;- murders.mil %&gt;%
   mutate(rank = rank(-rate))
 head(murders.rate)</code></pre>
@@ -797,17 +797,22 @@ murders.fil.1 &lt;- filter(murders.rate, state == &quot;New York&quot;)
 head(murders.fil.1)</code></pre>
 <pre><code>##      state abb    region population total    rate population_in_millions rank
 ## 1 New York  NY Northeast   19378102   517 2.66796                19.3781   29</code></pre>
-<pre class="r"><code># 10만 명당 총기살해 사망률이 가장 높은 상위 5개 주만 필터링할 경우.
+<pre class="r"><code># 10만 명당 총기살해 사망자 수가 가장 많은 상위 5개 주만 필터링할 경우.
 murders.fil.2 &lt;- murders.rate %&gt;%
-  filter(rate &lt;= 5)
+  filter(rank &lt;= 5)
 head(murders.fil.2)</code></pre>
-<pre><code>##        state abb region population total     rate population_in_millions rank
-## 1    Alabama  AL  South    4779736   135 2.824424               4.779736   23
-## 2     Alaska  AK   West     710231    19 2.675186               0.710231   27
-## 3    Arizona  AZ   West    6392017   232 3.629527               6.392017   10
-## 4   Arkansas  AR  South    2915918    93 3.189390               2.915918   17
-## 5 California  CA   West   37253956  1257 3.374138              37.253956   14
-## 6   Colorado  CO   West    5029196    65 1.292453               5.029196   38</code></pre>
+<pre><code>##                  state abb        region population total      rate
+## 1 District of Columbia  DC         South     601723    99 16.452753
+## 2            Louisiana  LA         South    4533372   351  7.742581
+## 3             Maryland  MD         South    5773552   293  5.074866
+## 4             Missouri  MO North Central    5988927   321  5.359892
+## 5       South Carolina  SC         South    4625364   207  4.475323
+##   population_in_millions rank
+## 1               0.601723    1
+## 2               4.533372    2
+## 3               5.773552    4
+## 4               5.988927    3
+## 5               4.625364    5</code></pre>
 <pre class="r"><code># 특정 주들을 제외한 사례만 필터링할 경우.
 murders.fil.3 &lt;- murders.rate %&gt;% 
   filter(state != &quot;Florida&quot;)
@@ -843,7 +848,7 @@ head(murders.fil.5)</code></pre>
 <h3>2) 데이터 요약하기</h3>
 <ul>
 <li><strong>개요:</strong> 탐색적 데이터 분석의 중요한 부분. 평균이나
-표준편차 같은 가술통계 값이 주로 데이터 요약에 사용됨. 하지만 좀 더
+표준편차 같은 기술통계 값이 주로 데이터 요약에 사용됨. 하지만 좀 더
 정보성이 높은 요약을 얻고자 할 경우, 데이터를 집단에 따라 나누는 것이
 좋음.</li>
 <li><strong>주요 함수:</strong> <code>summarise</code>,
@@ -881,14 +886,14 @@ s</code></pre>
 <ul>
 <li>murders 데이터셋으로 총기살해 사망률 평균 구하기.</li>
 </ul>
-<pre class="r"><code># 각 주별 총기살해 사망률의 평균: 각 주의 총기살해 사망률을 평균 낸 값.
+<pre class="r"><code># 각 주별 10만 명딩 총기살해 사망자 수의 평균: 각 주의 10만 명당 총기살해 사망자 수를 평균 낸 값.
 murders.rate %&gt;%
   summarise(average = mean(rate))</code></pre>
 <pre><code>##    average
 ## 1 2.779125</code></pre>
-<pre class="r"><code># 미국 전체의 총기살해 사망률의 평균: 미국의 전체 총기살해 사망자 수를 전체 미국 인구 수로 나눈 것.
+<pre class="r"><code># 미국 전체의 10만 명당 총기살해 사망자 수의 평균: 미국의 전체 총기살해 사망자 수 * 100,000를 전체 미국 인구 수로 나눈 것.
 us_murder_rate &lt;- murders %&gt;%
-  summarize(rate = sum(total) / sum(population) * 100000)
+  summarise(rate = sum(total) / sum(population) * 100000)
 us_murder_rate</code></pre>
 <pre><code>##       rate
 ## 1 3.034555</code></pre>
@@ -902,7 +907,7 @@ us_murder_rate</code></pre>
 <pre class="r"><code># quantile 함수를 사용하면 50번째(median), 0번쨰(minimum), 100번째(maximun) percentile 값을 한 번에 얻을 수 있음.
 heights %&gt;% 
   filter(sex == &quot;Female&quot;) %&gt;%
-  summarize(median_min_max = quantile(height, c(0.5, 0, 1)))</code></pre>
+  summarise(median_min_max = quantile(height, c(0.5, 0, 1)))</code></pre>
 <pre><code>##   median_min_max
 ## 1       64.98031
 ## 2       51.00000
@@ -936,7 +941,7 @@ heights %&gt;% group_by(sex) </code></pre>
 <pre class="r"><code># 성별에 따라 키의 평균과 표준편차에 대한 요약통계를 구분하여 제시해줌.
 heights %&gt;% 
   group_by(sex) %&gt;%
-  summarize(average = mean(height), standard_deviation = sd(height))</code></pre>
+  summarise(average = mean(height), standard_deviation = sd(height))</code></pre>
 <pre><code>## # A tibble: 2 x 3
 ##   sex    average standard_deviation
 ##   &lt;fct&gt;    &lt;dbl&gt;              &lt;dbl&gt;
@@ -969,20 +974,20 @@ heights %&gt;%
 <h4>E. <code>pull</code> 사용하기</h4>
 <ul>
 <li><strong>기능:</strong> <code>summarise</code> 함수로 얻은 데이터
-프레임 형식의 결과를 스칼라 형식으로 변환해줌.</li>
+프레임 형식의 결과를 벡터 형식으로 변환해줌.</li>
 </ul>
-<pre class="r"><code># us_murder_rate 요약통계는 `summarise` 함수를 사용했으므로 데이터 프레임 포맷임.
+<pre class="r"><code># us_murder_rate 요약통계는 summarise 함수를 사용했으므로 데이터 프레임 형식임.
 class(us_murder_rate)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<pre class="r"><code># `pull`을 사용해 스칼라 형식으로 변환할 경우.
+<pre class="r"><code># `pull`을 사용해 벡터 형식으로 변환할 경우.
 us_murder_rate.pull &lt;- us_murder_rate %&gt;% 
   pull(rate)
 class(us_murder_rate.pull)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code># 여러 개의 요약통계 값 중 하나만 선택하여 스칼라 형식으로 변환할 경우.
+<pre class="r"><code># 여러 개의 요약통계 값 중 하나만 선택하여 벡터 형식으로 변환할 경우.
 heights.pull &lt;- heights %&gt;% 
   group_by(sex) %&gt;%
-  summarize(average = mean(height), standard_deviation = sd(height)) %&gt;%
+  summarise(average = mean(height), standard_deviation = sd(height)) %&gt;%
   pull(average)
 class(heights.pull)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
@@ -1431,7 +1436,7 @@ murders %&gt;%
     region == &quot;South&quot; ~ &quot;South&quot;, # region이 &quot;South&quot;이면 &quot;South&quot;로 결과 반환.
     TRUE ~ &quot;Other&quot;)) %&gt;% # 나머지는 &quot;Other&quot;로 처리.
   group_by(m_group) %&gt;% # m_group 집단변수별로 데이터 나누기.
-  summarize(rate = sum(total) / sum(population) * 10^5) #  주별 총기살해 사망자 수 / 주별 인구 수 * 10만 =&gt; 주별 인구 10만 명당 총기살해 사망자 수 구하기.</code></pre>
+  summarise(rate = sum(total) / sum(population) * 10^5) # 주별 총기살해 사망자 수 / 주별 인구 수 * 10만 =&gt; 주별 인구 10만 명당 총기살해 사망자 수 구하기.</code></pre>
 <pre><code>## # A tibble: 4 x 2
 ##   m_group      rate
 ##   &lt;chr&gt;       &lt;dbl&gt;
