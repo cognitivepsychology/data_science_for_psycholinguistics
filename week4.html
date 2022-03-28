@@ -836,16 +836,16 @@ tibble.1</code></pre>
 <pre><code>## # A tibble: 1,000 x 5
 ##    a                   b              c     d e    
 ##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;
-##  1 2022-03-29 01:17:11 2022-04-17     1 0.747 a    
-##  2 2022-03-29 03:56:42 2022-04-07     2 0.676 e    
-##  3 2022-03-28 19:31:21 2022-04-01     3 0.509 s    
-##  4 2022-03-29 03:29:07 2022-04-01     4 0.232 o    
-##  5 2022-03-29 14:58:23 2022-04-19     5 0.169 n    
-##  6 2022-03-28 17:46:59 2022-04-04     6 0.696 k    
-##  7 2022-03-29 01:51:57 2022-04-17     7 0.477 i    
-##  8 2022-03-29 08:56:19 2022-03-31     8 0.369 y    
-##  9 2022-03-29 09:49:21 2022-04-04     9 0.658 e    
-## 10 2022-03-28 19:36:23 2022-04-09    10 0.205 z    
+##  1 2022-03-28 18:15:50 2022-04-08     1 0.374 m    
+##  2 2022-03-29 15:53:30 2022-04-02     2 0.750 e    
+##  3 2022-03-28 23:39:25 2022-04-23     3 0.801 x    
+##  4 2022-03-29 17:06:19 2022-04-14     4 0.854 p    
+##  5 2022-03-29 12:41:50 2022-04-21     5 0.618 l    
+##  6 2022-03-29 04:21:08 2022-04-16     6 0.181 q    
+##  7 2022-03-29 01:11:36 2022-04-18     7 0.912 u    
+##  8 2022-03-28 17:56:49 2022-04-04     8 0.104 a    
+##  9 2022-03-28 21:10:17 2022-04-17     9 0.906 b    
+## 10 2022-03-28 22:24:05 2022-04-06    10 0.481 e    
 ## # ... with 990 more rows</code></pre>
 <ul>
 <li>subsetting: 하나의 열/변수만 벡터의 형식으로 subsetting하려면
@@ -864,26 +864,26 @@ df &lt;- tibble(
 )
 # 열 이름으로 추출하기.
 df$x</code></pre>
-<pre><code>## [1] 0.51872406 0.91223982 0.98242573 0.45829415 0.09530076</code></pre>
+<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
 <pre class="r"><code>df[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.51872406 0.91223982 0.98242573 0.45829415 0.09530076</code></pre>
+<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
 <pre class="r"><code>df %&gt;% .$x</code></pre>
-<pre><code>## [1] 0.51872406 0.91223982 0.98242573 0.45829415 0.09530076</code></pre>
+<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
 <pre class="r"><code>df %&gt;% .[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.51872406 0.91223982 0.98242573 0.45829415 0.09530076</code></pre>
+<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
 <pre class="r"><code># 열 위치로 추출하기.
 df[[1]]</code></pre>
-<pre><code>## [1] 0.51872406 0.91223982 0.98242573 0.45829415 0.09530076</code></pre>
+<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
 <pre class="r"><code># []을 사용하여 subsetting하기.
 df[1]</code></pre>
 <pre><code>## # A tibble: 5 x 1
-##        x
-##    &lt;dbl&gt;
-## 1 0.519 
-## 2 0.912 
-## 3 0.982 
-## 4 0.458 
-## 5 0.0953</code></pre>
+##       x
+##   &lt;dbl&gt;
+## 1 0.706
+## 2 0.167
+## 3 0.584
+## 4 0.493
+## 5 0.848</code></pre>
 <pre class="r"><code># 티블을 데이터 프레임으로 변환하기
 class(as.data.frame(df))</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -908,7 +908,7 @@ class(as.data.frame(df))</code></pre>
 <li>R 기본 내장함수로 데이터 불러들이기.
 <ul>
 <li><code>read.csv</code>: 쉼표로 분리된 파일 티블로 읽어들이기.</li>
-<li>내장함수는 <strong>readr</strong>다 속도가 느리다는 단점이 있음.
+<li>내장함수는 <strong>readr</strong>보다 속도가 느리다는 단점이 있음.
 <strong>readr</strong>이 10배 이상 빠름!</li>
 </ul></li>
 </ul>
@@ -1322,7 +1322,7 @@ write_tsv(challenge2, &quot;challenge2.txt&quot;, col_names = T)
 <li><code>write_feather()</code> -&gt; <code>read_feather()</code></li>
 </ul></li>
 </ul>
-<pre class="r"><code># `write_rds()`로 반출한 뒤 `read_rds()`로 반입하기.
+<pre class="r"><code># write_rds()로 반출한 뒤 read_rds()로 반입하기.
 write_rds(challenge2, &quot;challenge2.rds&quot;)
 read_rds(&quot;challenge2.rds&quot;)</code></pre>
 <pre><code>## # A tibble: 2,000 x 2
@@ -1340,7 +1340,7 @@ read_rds(&quot;challenge2.rds&quot;)</code></pre>
 ## 10  3863 NA    
 ## # ... with 1,990 more rows</code></pre>
 <pre class="r"><code>library(feather)
-# `write_feather()`로 반출한 뒤 `read_feather()`로 반입하기.
+# write_feather()로 반출한 뒤 read_feather()로 반입하기.
 write_feather(challenge2, &quot;challenge2.feather&quot;)
 read_feather(&quot;challenge2.feather&quot;)</code></pre>
 <pre><code>## # A tibble: 2,000 x 2
