@@ -834,18 +834,18 @@ tibble.1 &lt;- tibble(
 options(tibble.width = Inf)
 tibble.1</code></pre>
 <pre><code>## # A tibble: 1,000 x 5
-##    a                   b              c      d e    
-##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;
-##  1 2022-03-29 01:46:51 2022-03-30     1 0.847  h    
-##  2 2022-03-28 23:21:59 2022-04-26     2 0.852  r    
-##  3 2022-03-28 22:20:00 2022-04-20     3 0.720  l    
-##  4 2022-03-29 10:22:31 2022-04-10     4 0.849  e    
-##  5 2022-03-28 20:09:28 2022-04-04     5 0.577  v    
-##  6 2022-03-28 14:38:23 2022-04-26     6 0.205  k    
-##  7 2022-03-28 21:34:57 2022-03-29     7 0.550  h    
-##  8 2022-03-29 09:18:41 2022-04-07     8 0.655  x    
-##  9 2022-03-29 05:57:39 2022-03-30     9 0.816  l    
-## 10 2022-03-28 13:33:13 2022-03-31    10 0.0666 o    
+##    a                   b              c     d e    
+##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;
+##  1 2022-03-29 11:03:03 2022-04-13     1 0.534 o    
+##  2 2022-03-29 12:19:43 2022-04-23     2 0.696 u    
+##  3 2022-03-28 21:34:04 2022-04-19     3 0.537 r    
+##  4 2022-03-29 08:49:54 2022-04-04     4 0.674 b    
+##  5 2022-03-28 20:53:12 2022-04-04     5 0.121 t    
+##  6 2022-03-28 15:51:46 2022-04-01     6 0.537 r    
+##  7 2022-03-28 13:14:56 2022-04-14     7 0.882 h    
+##  8 2022-03-28 20:26:22 2022-04-14     8 0.360 z    
+##  9 2022-03-28 18:56:40 2022-04-13     9 0.453 k    
+## 10 2022-03-29 04:59:57 2022-04-02    10 0.819 t    
 ## # ... with 990 more rows</code></pre>
 <ul>
 <li>subsetting: 하나의 열/변수만 벡터의 형식으로 subsetting하려면
@@ -864,26 +864,26 @@ df &lt;- tibble(
 )
 # 열 이름으로 추출하기.
 df$x</code></pre>
-<pre><code>## [1] 0.3268697 0.9020658 0.4478151 0.8003888 0.2860159</code></pre>
+<pre><code>## [1] 0.2194152 0.8494540 0.8840972 0.7606079 0.4869186</code></pre>
 <pre class="r"><code>df[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.3268697 0.9020658 0.4478151 0.8003888 0.2860159</code></pre>
+<pre><code>## [1] 0.2194152 0.8494540 0.8840972 0.7606079 0.4869186</code></pre>
 <pre class="r"><code>df %&gt;% .$x</code></pre>
-<pre><code>## [1] 0.3268697 0.9020658 0.4478151 0.8003888 0.2860159</code></pre>
+<pre><code>## [1] 0.2194152 0.8494540 0.8840972 0.7606079 0.4869186</code></pre>
 <pre class="r"><code># 열 위치로 추출하기.
 df[[1]]</code></pre>
-<pre><code>## [1] 0.3268697 0.9020658 0.4478151 0.8003888 0.2860159</code></pre>
+<pre><code>## [1] 0.2194152 0.8494540 0.8840972 0.7606079 0.4869186</code></pre>
 <pre class="r"><code>df %&gt;% .[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.3268697 0.9020658 0.4478151 0.8003888 0.2860159</code></pre>
+<pre><code>## [1] 0.2194152 0.8494540 0.8840972 0.7606079 0.4869186</code></pre>
 <pre class="r"><code># []을 사용하여 subsetting하기.
 df[1]</code></pre>
 <pre><code>## # A tibble: 5 x 1
 ##       x
 ##   &lt;dbl&gt;
-## 1 0.327
-## 2 0.902
-## 3 0.448
-## 4 0.800
-## 5 0.286</code></pre>
+## 1 0.219
+## 2 0.849
+## 3 0.884
+## 4 0.761
+## 5 0.487</code></pre>
 <pre class="r"><code># 티블을 데이터 프레임으로 변환하기
 class(as.data.frame(df))</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -1151,12 +1151,7 @@ problems(challenge)</code></pre>
 challenge.step1 &lt;- read_csv(readr_example(&quot;challenge.csv&quot;), 
                             col_types = cols(x = col_double(), 
                                              y = col_logical()))
-
-# 단계 2
-challenge.step2 &lt;- read_csv(readr_example(&quot;challenge.csv&quot;), 
-                            col_types = cols(x = col_double(), 
-                                             y = col_date())) # 날짜 형식의 칼럼으로 parsing하기.
-head(challenge)</code></pre>
+head(challenge.step1)</code></pre>
 <pre><code>## # A tibble: 6 x 2
 ##       x y    
 ##   &lt;dbl&gt; &lt;lgl&gt;
@@ -1166,7 +1161,7 @@ head(challenge)</code></pre>
 ## 4   787 NA   
 ## 5    37 NA   
 ## 6  2332 NA</code></pre>
-<pre class="r"><code>tail(challenge)</code></pre>
+<pre class="r"><code>tail(challenge.step1)</code></pre>
 <pre><code>## # A tibble: 6 x 2
 ##       x y    
 ##   &lt;dbl&gt; &lt;lgl&gt;
@@ -1176,6 +1171,30 @@ head(challenge)</code></pre>
 ## 4 0.718 NA   
 ## 5 0.270 NA   
 ## 6 0.608 NA</code></pre>
+<pre class="r"><code># 단계 2
+challenge.step2 &lt;- read_csv(readr_example(&quot;challenge.csv&quot;), 
+                            col_types = cols(x = col_double(), 
+                                             y = col_date())) # 날짜 형식의 칼럼으로 parsing하기.
+head(challenge.step2)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##       x y     
+##   &lt;dbl&gt; &lt;date&gt;
+## 1   404 NA    
+## 2  4172 NA    
+## 3  3004 NA    
+## 4   787 NA    
+## 5    37 NA    
+## 6  2332 NA</code></pre>
+<pre class="r"><code>tail(challenge.step2)</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##       x y         
+##   &lt;dbl&gt; &lt;date&gt;    
+## 1 0.805 2019-11-21
+## 2 0.164 2018-03-29
+## 3 0.472 2014-08-04
+## 4 0.718 2015-08-16
+## 5 0.270 2020-02-04
+## 6 0.608 2019-01-06</code></pre>
 </div>
 <div id="c.-기타-전략" class="section level4">
 <h4>C. 기타 전략</h4>
