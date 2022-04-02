@@ -365,7 +365,7 @@ pre code {
 <h1 class="title toc-ignore">언어심리학을 위한 데이터 사이언스 4주차:
 데이터 사이언스 #2</h1>
 <h3 class="subtitle">고려대학교 일반대학원 심리학과</h3>
-<h4 class="date">2022년 3월 28 월요일 5-6교시</h4>
+<h4 class="date">2022년 3월 28일 월요일 5-6교시</h4>
 
 </div>
 
@@ -454,6 +454,7 @@ data)</a>
 <li><a href="#filtering-joins">3) filtering joins</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 
@@ -836,16 +837,16 @@ tibble.1</code></pre>
 <pre><code>## # A tibble: 1,000 x 5
 ##    a                   b              c     d e    
 ##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;
-##  1 2022-03-28 18:15:50 2022-04-08     1 0.374 m    
-##  2 2022-03-29 15:53:30 2022-04-02     2 0.750 e    
-##  3 2022-03-28 23:39:25 2022-04-23     3 0.801 x    
-##  4 2022-03-29 17:06:19 2022-04-14     4 0.854 p    
-##  5 2022-03-29 12:41:50 2022-04-21     5 0.618 l    
-##  6 2022-03-29 04:21:08 2022-04-16     6 0.181 q    
-##  7 2022-03-29 01:11:36 2022-04-18     7 0.912 u    
-##  8 2022-03-28 17:56:49 2022-04-04     8 0.104 a    
-##  9 2022-03-28 21:10:17 2022-04-17     9 0.906 b    
-## 10 2022-03-28 22:24:05 2022-04-06    10 0.481 e    
+##  1 2022-04-03 10:12:23 2022-04-10     1 0.847 g    
+##  2 2022-04-03 05:15:37 2022-04-30     2 0.577 y    
+##  3 2022-04-02 23:01:12 2022-05-01     3 0.267 t    
+##  4 2022-04-02 17:21:05 2022-04-18     4 0.459 c    
+##  5 2022-04-03 09:07:42 2022-04-06     5 0.509 s    
+##  6 2022-04-02 21:04:07 2022-04-13     6 0.300 q    
+##  7 2022-04-03 04:45:59 2022-04-05     7 0.989 j    
+##  8 2022-04-02 17:08:59 2022-04-14     8 0.117 o    
+##  9 2022-04-03 00:25:59 2022-04-17     9 0.312 g    
+## 10 2022-04-03 02:38:55 2022-04-09    10 0.602 f    
 ## # ... with 990 more rows</code></pre>
 <ul>
 <li>subsetting: 하나의 열/변수만 벡터의 형식으로 subsetting하려면
@@ -864,26 +865,26 @@ df &lt;- tibble(
 )
 # 열 이름으로 추출하기.
 df$x</code></pre>
-<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
+<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
 <pre class="r"><code>df[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
+<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
 <pre class="r"><code>df %&gt;% .$x</code></pre>
-<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
+<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
 <pre class="r"><code>df %&gt;% .[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
+<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
 <pre class="r"><code># 열 위치로 추출하기.
 df[[1]]</code></pre>
-<pre><code>## [1] 0.7058097 0.1670633 0.5838860 0.4928099 0.8475042</code></pre>
+<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
 <pre class="r"><code># []을 사용하여 subsetting하기.
 df[1]</code></pre>
 <pre><code>## # A tibble: 5 x 1
 ##       x
 ##   &lt;dbl&gt;
-## 1 0.706
-## 2 0.167
-## 3 0.584
-## 4 0.493
-## 5 0.848</code></pre>
+## 1 0.676
+## 2 0.609
+## 3 0.610
+## 4 0.631
+## 5 0.485</code></pre>
 <pre class="r"><code># 티블을 데이터 프레임으로 변환하기
 class(as.data.frame(df))</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -2601,6 +2602,14 @@ flights</code></pre>
 </div>
 </div>
 </div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Irizarry, R. A. (2022). <em>Introduction to data science: Data
+analysis and prediction algorithms with R</em>. Retrieved March 20, 2022
+from <a href="https://rafalab.github.io/dsbook" class="uri">https://rafalab.github.io/dsbook</a></p>
+<p>Wickham, H., &amp; Grolemund, G. (2017). <em>R for data science</em>.
+Retrieved March 20, 2022 from <a href="https://r4ds.had.co.nz" class="uri">https://r4ds.had.co.nz</a></p>
 </div>
 
 
