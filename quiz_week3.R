@@ -73,5 +73,5 @@ iris %>%
 iris %>%
   mutate(Petal.Length_level = case_when(Petal.Length <= 2 ~ "short",
                                         Petal.Length > 2 & Petal.Length <= 4 ~ "middle",
-                                        Petal.Length > 4 ~ "long"))
+                                        Petal.Length > 4 ~ "long"))  
 
