@@ -835,18 +835,18 @@ tibble.1 &lt;- tibble(
 options(tibble.width = Inf)
 tibble.1</code></pre>
 <pre><code>## # A tibble: 1,000 x 5
-##    a                   b              c     d e    
-##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;
-##  1 2022-04-03 10:12:23 2022-04-10     1 0.847 g    
-##  2 2022-04-03 05:15:37 2022-04-30     2 0.577 y    
-##  3 2022-04-02 23:01:12 2022-05-01     3 0.267 t    
-##  4 2022-04-02 17:21:05 2022-04-18     4 0.459 c    
-##  5 2022-04-03 09:07:42 2022-04-06     5 0.509 s    
-##  6 2022-04-02 21:04:07 2022-04-13     6 0.300 q    
-##  7 2022-04-03 04:45:59 2022-04-05     7 0.989 j    
-##  8 2022-04-02 17:08:59 2022-04-14     8 0.117 o    
-##  9 2022-04-03 00:25:59 2022-04-17     9 0.312 g    
-## 10 2022-04-03 02:38:55 2022-04-09    10 0.602 f    
+##    a                   b              c      d e    
+##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;
+##  1 2022-04-05 16:34:45 2022-04-29     1 0.340  y    
+##  2 2022-04-05 13:30:37 2022-04-15     2 0.937  v    
+##  3 2022-04-05 16:12:54 2022-04-29     3 0.602  p    
+##  4 2022-04-04 22:51:16 2022-04-20     4 0.243  s    
+##  5 2022-04-05 14:32:43 2022-05-01     5 0.515  y    
+##  6 2022-04-05 15:13:15 2022-04-16     6 0.0659 l    
+##  7 2022-04-05 08:23:59 2022-04-20     7 0.143  t    
+##  8 2022-04-04 21:05:35 2022-04-13     8 0.401  b    
+##  9 2022-04-05 04:36:33 2022-04-28     9 0.908  c    
+## 10 2022-04-05 09:00:05 2022-04-19    10 0.0765 q    
 ## # ... with 990 more rows</code></pre>
 <ul>
 <li>subsetting: 하나의 열/변수만 벡터의 형식으로 subsetting하려면
@@ -865,26 +865,26 @@ df &lt;- tibble(
 )
 # 열 이름으로 추출하기.
 df$x</code></pre>
-<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
+<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
 <pre class="r"><code>df[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
+<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
 <pre class="r"><code>df %&gt;% .$x</code></pre>
-<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
+<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
 <pre class="r"><code>df %&gt;% .[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
+<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
 <pre class="r"><code># 열 위치로 추출하기.
 df[[1]]</code></pre>
-<pre><code>## [1] 0.6756714 0.6091966 0.6099738 0.6312533 0.4851667</code></pre>
+<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
 <pre class="r"><code># []을 사용하여 subsetting하기.
 df[1]</code></pre>
 <pre><code>## # A tibble: 5 x 1
 ##       x
 ##   &lt;dbl&gt;
-## 1 0.676
-## 2 0.609
-## 3 0.610
-## 4 0.631
-## 5 0.485</code></pre>
+## 1 0.529
+## 2 0.777
+## 3 0.580
+## 4 0.608
+## 5 0.475</code></pre>
 <pre class="r"><code># 티블을 데이터 프레임으로 변환하기
 class(as.data.frame(df))</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -904,11 +904,11 @@ class(as.data.frame(df))</code></pre>
 <li><code>read_csv</code>: 쉼표로 분리된 파일 티블로 읽어들이기.</li>
 <li><code>read_csv2</code>: 세미콜론으로 분리된 파일 티블로
 읽어들이기.</li>
-<li>: 쉼표로 분리된 파일 데이터 프레임으로 읽어들이기.</li>
 </ul></li>
 <li>R 기본 내장함수로 데이터 불러들이기.
 <ul>
-<li><code>read.csv</code>: 쉼표로 분리된 파일 티블로 읽어들이기.</li>
+<li><code>read.csv</code>: 쉼표로 분리된 파일 데이터 프레임으로
+읽어들이기.</li>
 <li>내장함수는 <strong>readr</strong>보다 속도가 느리다는 단점이 있음.
 <strong>readr</strong>이 10배 이상 빠름!</li>
 </ul></li>
@@ -960,7 +960,7 @@ head(x1)</code></pre>
 불러들이기.</li>
 <li><code>read_tsv()</code>: <strong>readr</strong>로 탭(tab)으로 분리된
 텍스트 파일 불러들이기.</li>
-<li><code>read.table()</code>: R 기본 내장함수로 텍스트 파일
+<li><code>read.delim()</code>: R 기본 내장함수로 텍스트 파일
 불러들이기.</li>
 </ul></li>
 </ul>
@@ -971,7 +971,7 @@ y &lt;- read_delim(&quot;texts/세종 말뭉치 샘플_txt_2주차 (22-03-14).tx
 y1 &lt;- read_tsv(&quot;texts/세종 말뭉치 샘플_txt_2주차 (22-03-14).txt&quot;)
 
 # R 기본 내장함수로 불러들이기.
-y.base &lt;- read.table(&quot;texts/세종 말뭉치 샘플_txt_2주차 (22-03-14).txt&quot;, header = T, sep = &quot;\t&quot;, fileEncoding = &quot;utf-8&quot;)</code></pre>
+y.base &lt;- read.delim(&quot;texts/세종 말뭉치 샘플_txt_2주차 (22-03-14).txt&quot;, header = T, sep = &quot;\t&quot;, fileEncoding = &quot;utf-8&quot;)</code></pre>
 </div>
 <div id="read_excel" class="section level3">
 <h3>3) <code>read_excel</code></h3>
@@ -1212,7 +1212,7 @@ challenge2 &lt;- read_csv(readr_example(&quot;challenge.csv&quot;), guess_max = 
 ##   y = col_date(format = &quot;&quot;)
 ## )</code></pre>
 <ul>
-<li>문자 벡터 parsing -&gt; 열 parsing 수정하기
+<li>모든 열을 문자 벡터로 parsing한 뒤 parsing 수정하기
 <ul>
 <li>단계 1: 모든 열을 아예 문자 벡터로 parsing하도록 명령하기.</li>
 <li>단계 2: <code>type_convert()</code> 함수를 통해 해당 객체의 열을
@@ -1274,7 +1274,7 @@ challenge4 &lt;- read_lines(readr_example(&quot;challenge.csv&quot;))</code></pr
 <ul>
 <li>csv 파일로 데이터 프레임 저장하기
 <ul>
-<li><code>write_csv</code>: <strong>readxl</strong> 패키지로 텍스트 파일
+<li><code>write_csv</code>: <strong>readr</strong> 패키지로 텍스트 파일
 저장하기</li>
 <li><code>write.csv</code>: R 기본 내장함수로 텍스트 파일 저장하기.</li>
 </ul></li>
