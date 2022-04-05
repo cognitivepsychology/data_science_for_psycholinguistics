@@ -395,7 +395,8 @@ pre code {
 <li><a href="#데이터-반입">(2) 데이터 반입</a>
 <ul>
 <li><a href="#readr-패키지-및-r-베이스-함수로-데이터-불러들이기">1)
-readr 패키지 및 R 베이스 함수로 데이터 불러들이기</a></li>
+<strong>readr</strong> 패키지 및 R 베이스 함수로 데이터
+불러들이기</a></li>
 <li><a href="#read_csv-read_csv2-read.csv">1) <code>read_csv</code>,
 <code>read_csv2</code>, <code>read.csv</code></a></li>
 <li><a href="#read_delim">2) <code>read_delim()</code></a></li>
@@ -835,18 +836,18 @@ tibble.1 &lt;- tibble(
 options(tibble.width = Inf)
 tibble.1</code></pre>
 <pre><code>## # A tibble: 1,000 x 5
-##    a                   b              c      d e    
-##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt;  &lt;dbl&gt; &lt;chr&gt;
-##  1 2022-04-05 16:34:45 2022-04-29     1 0.340  y    
-##  2 2022-04-05 13:30:37 2022-04-15     2 0.937  v    
-##  3 2022-04-05 16:12:54 2022-04-29     3 0.602  p    
-##  4 2022-04-04 22:51:16 2022-04-20     4 0.243  s    
-##  5 2022-04-05 14:32:43 2022-05-01     5 0.515  y    
-##  6 2022-04-05 15:13:15 2022-04-16     6 0.0659 l    
-##  7 2022-04-05 08:23:59 2022-04-20     7 0.143  t    
-##  8 2022-04-04 21:05:35 2022-04-13     8 0.401  b    
-##  9 2022-04-05 04:36:33 2022-04-28     9 0.908  c    
-## 10 2022-04-05 09:00:05 2022-04-19    10 0.0765 q    
+##    a                   b              c     d e    
+##    &lt;dttm&gt;              &lt;date&gt;     &lt;int&gt; &lt;dbl&gt; &lt;chr&gt;
+##  1 2022-04-06 01:40:58 2022-04-09     1 0.198 t    
+##  2 2022-04-06 02:27:58 2022-05-01     2 0.188 k    
+##  3 2022-04-06 12:23:45 2022-04-15     3 0.417 b    
+##  4 2022-04-06 21:10:42 2022-04-19     4 0.390 r    
+##  5 2022-04-06 15:56:48 2022-05-04     5 0.313 l    
+##  6 2022-04-06 21:43:14 2022-04-29     6 0.315 a    
+##  7 2022-04-06 05:25:54 2022-04-09     7 0.690 i    
+##  8 2022-04-06 19:50:45 2022-05-01     8 0.142 i    
+##  9 2022-04-06 14:22:40 2022-05-03     9 0.832 o    
+## 10 2022-04-06 11:44:24 2022-05-03    10 0.320 c    
 ## # ... with 990 more rows</code></pre>
 <ul>
 <li>subsetting: 하나의 열/변수만 벡터의 형식으로 subsetting하려면
@@ -865,26 +866,26 @@ df &lt;- tibble(
 )
 # 열 이름으로 추출하기.
 df$x</code></pre>
-<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
+<pre><code>## [1] 0.04978874 0.19496026 0.12903356 0.61734957 0.19174198</code></pre>
 <pre class="r"><code>df[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
+<pre><code>## [1] 0.04978874 0.19496026 0.12903356 0.61734957 0.19174198</code></pre>
 <pre class="r"><code>df %&gt;% .$x</code></pre>
-<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
+<pre><code>## [1] 0.04978874 0.19496026 0.12903356 0.61734957 0.19174198</code></pre>
 <pre class="r"><code>df %&gt;% .[[&quot;x&quot;]]</code></pre>
-<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
+<pre><code>## [1] 0.04978874 0.19496026 0.12903356 0.61734957 0.19174198</code></pre>
 <pre class="r"><code># 열 위치로 추출하기.
 df[[1]]</code></pre>
-<pre><code>## [1] 0.5291470 0.7768096 0.5798543 0.6083685 0.4750548</code></pre>
+<pre><code>## [1] 0.04978874 0.19496026 0.12903356 0.61734957 0.19174198</code></pre>
 <pre class="r"><code># []을 사용하여 subsetting하기.
 df[1]</code></pre>
 <pre><code>## # A tibble: 5 x 1
-##       x
-##   &lt;dbl&gt;
-## 1 0.529
-## 2 0.777
-## 3 0.580
-## 4 0.608
-## 5 0.475</code></pre>
+##        x
+##    &lt;dbl&gt;
+## 1 0.0498
+## 2 0.195 
+## 3 0.129 
+## 4 0.617 
+## 5 0.192</code></pre>
 <pre class="r"><code># 티블을 데이터 프레임으로 변환하기
 class(as.data.frame(df))</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -893,7 +894,8 @@ class(as.data.frame(df))</code></pre>
 <div id="데이터-반입" class="section level2">
 <h2>(2) 데이터 반입</h2>
 <div id="readr-패키지-및-r-베이스-함수로-데이터-불러들이기" class="section level3">
-<h3>1) readr 패키지 및 R 베이스 함수로 데이터 불러들이기</h3>
+<h3>1) <strong>readr</strong> 패키지 및 R 베이스 함수로 데이터
+불러들이기</h3>
 </div>
 <div id="read_csv-read_csv2-read.csv" class="section level3">
 <h3>1) <code>read_csv</code>, <code>read_csv2</code>,
