@@ -15,3 +15,7 @@
 ## 4. 5주차 수업자료: 데이터 사이언스 #3
 
 * **[week5.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week5.html):** 5주차 수업자료: 데이터 사이언스 #3. 해당 자료를 열람하려면 링크를 클릭할 것. 
+
+## 5. 7주차 수업자료: 데이터 사이언스 #3-4
+
+* **[week7.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week7.html):** 7주차 수업자료: 데이터 사이언스 #3-4. 해당 자료를 열람하려면 링크를 클릭할 것. 
