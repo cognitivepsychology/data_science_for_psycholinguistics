@@ -564,7 +564,7 @@ stat.desc(murders[, 4:5], basic = F, norm = T)</code></pre>
 <blockquote>
 <p>mlv(변수명, method = “최빈값 추출 방법”)</p>
 </blockquote>
-<pre class="r"><code>#  함수로 주별 총기살인 건수 기술통계량 계산하기.
+<pre class="r"><code># mlv 함수로 주별 총기살인 건수 최빈값 계산하기.
 library(modeest)</code></pre>
 <pre><code>## Registered S3 methods overwritten by &#39;rmutil&#39;:
 ##   method         from 
@@ -815,7 +815,7 @@ festival.2 %&gt;%
 <ul>
 <li>설명: 관찰값을 <em>z</em>-점수(평균이 0이고, 표준편차가 1인
 <em>z</em>-분포를 따르는 값)로 변형하기.</li>
-<li>용례: 정적 편표일 경우, 비교대상 자료 간 분산이 동일하지 않을 경우
+<li>용례: 정적 편포일 경우, 비교대상 자료 간 분산이 동일하지 않을 경우
 사용.</li>
 </ul>
 <pre class="r"><code># 데이터 변형.
@@ -841,7 +841,7 @@ festival.2 %&gt;%
 <h2>(3) 제곱근/세제곱근 변형</h2>
 <ul>
 <li>설명: 관찰값을 제곱근 또는 세제곱근으로 변형하기.</li>
-<li>용례: 정적 편표일 경우, 비교대상 자료 간 분산이 동일하지 않을
+<li>용례: 정적 편포일 경우, 비교대상 자료 간 분산이 동일하지 않을
 경우.</li>
 </ul>
 <pre class="r"><code># 데이터를 제곱근으로 변형하기.
@@ -884,12 +884,12 @@ festival.2 %&gt;%
 <h2>(4) 마이너스 제곱 변형</h2>
 <ul>
 <li>설명: 관찰값에 -1제곱을 곱하기.</li>
-<li>용례: 정적 편표일 경우, 비교대상 자료 간 분산이 동일하지 않을
+<li>용례: 정적 편포일 경우, 비교대상 자료 간 분산이 동일하지 않을
 경우.</li>
 </ul>
 <pre class="r"><code># 데이터 변형.
 festival.2 &lt;- festival.1 %&gt;%
-  mutate(hygiene_score_reciprocal = 1/(hygiene_score + 1))
+  mutate(hygiene_score_reciprocal = 1/(hygiene_score + 1)) # 분모가 0일 경우를 대비하여 1을 더하기.
 
 # 변형 전 분포 확인.
 festival.1 %&gt;% 
@@ -911,7 +911,7 @@ festival.2 %&gt;%
 <ul>
 <li>설명: 해당 데이터 중 가장 큰 관찰값으로부터 개별 관찰값을 빼기.
 분포가 정반대로 바뀌므로 반드시 -1을 다시 곱해주어야 함.</li>
-<li>용례: 부적 편표일 경우.</li>
+<li>용례: 부적 편포일 경우.</li>
 </ul>
 <pre class="r"><code># 일자별 최댓값 구하기.
 festival.1.max &lt;- festival.1 %&gt;%
@@ -920,6 +920,12 @@ festival.1.max &lt;- festival.1 %&gt;%
   pull()
 
 # 가장 큰 관찰값에서 개별 관찰값 빼기.
+
+festival.2 &lt;- festival.1 %&gt;%
+  mutate(hygiene_score_maxsub = case_when(day == &quot;day1&quot; ~ -1 *(festival.1.max[1] - hygiene_score),
+                                          day == &quot;day2&quot; ~ -1 *(festival.1.max[2] - hygiene_score),
+                                          day == &quot;day3&quot; ~ -1 *(festival.1.max[3] - hygiene_score)))  
+
 festival.2 &lt;- festival.1 %&gt;%
   mutate(hygiene_score_maxsub = case_when(day == &quot;day1&quot; ~ hygiene_score - festival.1.max[1],
                                           day == &quot;day2&quot; ~ hygiene_score - festival.1.max[2],
@@ -1134,7 +1140,7 @@ biggest_liar %&gt;%
 <ul>
 <li>서열척도 변수가 포함되어 있을 경우.</li>
 <li>데이터셋의 규모가 작을 경우.</li>
-<li>동일한 순위(rank)가 많이 있을 경우.</li>
+<li>동일한 순위(rank)가 다수 중복될 경우.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1824,11 +1830,11 @@ yuen(mischief ~ cloak, data = cloak_tib, nboot = 1000, side = T)</code></pre>
 ## yuenbt(formula = mischief ~ cloak, data = cloak_tib, nboot = 1000, 
 ##     side = T)
 ## 
-## Test statistic: -1.3607 (df = NA), p-value = 0.191
+## Test statistic: -1.3607 (df = NA), p-value = 0.171
 ## 
 ## Trimmed mean difference:  -1 
 ## 95 percent confidence interval:
-## -2.6054     0.6054</code></pre>
+## -2.5732     0.5732</code></pre>
 </div>
 <div id="robust-종속표본-t-검정" class="section level4">
 <h4>5) robust 종속표본 <em>t</em>-검정</h4>
