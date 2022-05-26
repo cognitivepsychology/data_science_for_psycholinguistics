@@ -32,3 +32,8 @@
 
 * **[week12.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week12.html):** 12주차 수업자료: 데이터 사이언스 #5. 해당 자료를 열람하려면 링크를 클릭할 것. 
 
+## 8-1. 12주차 퀴즈
+
+* **[quiz_week12.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/quiz_week12.html):** 12주차 퀴즈용 html. 해당 자료를 열람하려면 링크를 클릭할 것. 
+
+
