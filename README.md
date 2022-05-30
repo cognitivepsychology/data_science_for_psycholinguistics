@@ -43,3 +43,6 @@
 
 * **[week12_1.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week12_1.html):** 13주차 수업자료: 데이터 사이언스 #5. 해당 자료를 열람하려면 링크를 클릭할 것. 
 
+## 9-1. 13주차 수업자료: 문자열 #1
+
+* **[week13.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week13.html):** 13주차 수업자료: 문자열 #1. 해당 자료를 열람하려면 링크를 클릭할 것. 
