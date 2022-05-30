@@ -2690,11 +2690,11 @@ matching)하기</h1>
 <pre class="r"><code>x &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;)
 y &lt;- c(&quot;아무래도&quot;, &quot;이런&quot;, &quot;경이로운&quot;, &quot;캘린더가&quot;, &quot;제격이다.&quot;)
 str_view(x, &quot;an&quot;)</code></pre>
-<div id="htmlwidget-c0c77ca18d6e1bb99d03" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c0c77ca18d6e1bb99d03">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6b03a60c0a01b28eeeae" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6b03a60c0a01b28eeeae">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>b<span class='match'>an<\/span>ana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(y, &quot;이다&quot;)</code></pre>
-<div id="htmlwidget-8316756455b983b11814" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8316756455b983b11814">{"x":{"html":"<ul>\n  <li>아무래도<\/li>\n  <li>이런<\/li>\n  <li>경이로운<\/li>\n  <li>캘린더가<\/li>\n  <li>제격<span class='match'>이다<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-dbab131b1e57d6b79055" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dbab131b1e57d6b79055">{"x":{"html":"<ul>\n  <li>아무래도<\/li>\n  <li>이런<\/li>\n  <li>경이로운<\/li>\n  <li>캘린더가<\/li>\n  <li>제격<span class='match'>이다<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>.</code>
 <ul>
@@ -2707,24 +2707,24 @@ str_view(x, &quot;an&quot;)</code></pre>
 </ul>
 <pre class="r"><code># 모든 문자와 매치되는 경우 찾기.
 str_view(x, &quot;.a.&quot;)</code></pre>
-<div id="htmlwidget-974ac760815249a2f170" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-974ac760815249a2f170">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d1a33e968b176ddac6e1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d1a33e968b176ddac6e1">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li><span class='match'>ban<\/span>ana<\/li>\n  <li>p<span class='match'>ear<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(y, &quot;.이.&quot;)</code></pre>
-<div id="htmlwidget-b9b4d869d67c1bd24f9e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b9b4d869d67c1bd24f9e">{"x":{"html":"<ul>\n  <li>아무래도<\/li>\n  <li>이런<\/li>\n  <li><span class='match'>경이로<\/span>운<\/li>\n  <li>캘린더가<\/li>\n  <li>제<span class='match'>격이다<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-f26ae3235c88939abee1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f26ae3235c88939abee1">{"x":{"html":"<ul>\n  <li>아무래도<\/li>\n  <li>이런<\/li>\n  <li><span class='match'>경이로<\/span>운<\/li>\n  <li>캘린더가<\/li>\n  <li>제<span class='match'>격이다<\/span>.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 마침표 문자 매치 찾기.
 str_view(c(&quot;abc&quot;, &quot;a.c&quot;, &quot;bef&quot;), &quot;a\\.c&quot;)</code></pre>
-<div id="htmlwidget-41c4a917863df72b4a11" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-41c4a917863df72b4a11">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>bef<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-57d9634208ea1e02aa8f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-57d9634208ea1e02aa8f">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>bef<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(z, &quot;다\\.&quot;)</code></pre>
-<div id="htmlwidget-85f1872373cdd8efff61" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-85f1872373cdd8efff61">{"x":{"html":"<ul>\n  <li>신년<\/li>\n  <li>기분을<\/li>\n  <li>돋우다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b88a8e2a10b01e121b0e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b88a8e2a10b01e121b0e">{"x":{"html":"<ul>\n  <li>신년<\/li>\n  <li>기분을<\/li>\n  <li>돋우다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>x &lt;- &quot;a\\b&quot;
 writeLines(x)</code></pre>
 <pre><code>## a\b</code></pre>
 <pre class="r"><code>str_view(x, &quot;\\\\&quot;)</code></pre>
-<div id="htmlwidget-782460c580ef2664e5a8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-782460c580ef2664e5a8">{"x":{"html":"<ul>\n  <li>a<span class='match'>\\<\/span>b<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-564357134fe995e11fab" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-564357134fe995e11fab">{"x":{"html":"<ul>\n  <li>a<span class='match'>\\<\/span>b<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="문자열의-시작과-끝" class="section level2">
 <h2>(2) 문자열의 시작과 끝</h2>
@@ -2743,29 +2743,29 @@ y &lt;- c(&quot;이런&quot;, &quot;이로운&quot;, &quot;경이로운&quot;, &
 
 # 문자열의 시작과 매치되는 문자열 찾기.
 str_view(x, &quot;^a&quot;)</code></pre>
-<div id="htmlwidget-bb46066a5e24da7e6f7f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb46066a5e24da7e6f7f">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8e5093b4844d7a02254d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8e5093b4844d7a02254d">{"x":{"html":"<ul>\n  <li><span class='match'>a<\/span>pple<\/li>\n  <li>banana<\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(y, &quot;^이&quot;)</code></pre>
-<div id="htmlwidget-4b7845a8d9e438fdaf70" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4b7845a8d9e438fdaf70">{"x":{"html":"<ul>\n  <li><span class='match'>이<\/span>런<\/li>\n  <li><span class='match'>이<\/span>로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li>경이<\/li>\n  <li>환경이<\/li>\n  <li>제격이다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-34c6648a5d9436775581" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-34c6648a5d9436775581">{"x":{"html":"<ul>\n  <li><span class='match'>이<\/span>런<\/li>\n  <li><span class='match'>이<\/span>로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li>경이<\/li>\n  <li>환경이<\/li>\n  <li>제격이다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 문자열의 끝과 매치되는 문자열 찾기.
 str_view(x, &quot;a$&quot;)</code></pre>
-<div id="htmlwidget-b361e039de609e47ce2b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-b361e039de609e47ce2b">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e92e1651d5bf004e9137" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e92e1651d5bf004e9137">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>banan<span class='match'>a<\/span><\/li>\n  <li>pear<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(y, &quot;다$&quot;)</code></pre>
-<div id="htmlwidget-5a7753b2c696f17b12dc" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5a7753b2c696f17b12dc">{"x":{"html":"<ul>\n  <li>이런<\/li>\n  <li>이로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li>경이<\/li>\n  <li>환경이<\/li>\n  <li>제격이<span class='match'>다<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e86d4aa24226b7d41663" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e86d4aa24226b7d41663">{"x":{"html":"<ul>\n  <li>이런<\/li>\n  <li>이로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li>경이<\/li>\n  <li>환경이<\/li>\n  <li>제격이<span class='match'>다<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 해당 문자열과 완벽하게 매치되는 문자열 찾기.
 x &lt;- c(&quot;apple pie&quot;, &quot;apple&quot;, &quot;apple cake&quot;)
 str_view(x, &quot;apple&quot;)</code></pre>
-<div id="htmlwidget-342497d6e00f233c175e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-342497d6e00f233c175e">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li><span class='match'>apple<\/span> cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ef9ab9a773d18bbf8e60" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ef9ab9a773d18bbf8e60">{"x":{"html":"<ul>\n  <li><span class='match'>apple<\/span> pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li><span class='match'>apple<\/span> cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;^apple$&quot;)</code></pre>
-<div id="htmlwidget-01131233f3c01cc22836" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-01131233f3c01cc22836">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6734425186aea7ef2d68" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6734425186aea7ef2d68">{"x":{"html":"<ul>\n  <li>apple pie<\/li>\n  <li><span class='match'>apple<\/span><\/li>\n  <li>apple cake<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(y, &quot;^경이$&quot;)</code></pre>
-<div id="htmlwidget-62daaa91bf48745b86dc" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-62daaa91bf48745b86dc">{"x":{"html":"<ul>\n  <li>이런<\/li>\n  <li>이로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li><span class='match'>경이<\/span><\/li>\n  <li>환경이<\/li>\n  <li>제격이다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4041265559d6f98b9ffb" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4041265559d6f98b9ffb">{"x":{"html":"<ul>\n  <li>이런<\/li>\n  <li>이로운<\/li>\n  <li>경이로운<\/li>\n  <li>경이적<\/li>\n  <li><span class='match'>경이<\/span><\/li>\n  <li>환경이<\/li>\n  <li>제격이다<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="문자-클래스character-class-및-두-개-이상의-패턴-중-하나-선택하기" class="section level2">
 <h2>(3) 문자 클래스(character class) 및 두 개 이상의 패턴 중 하나
@@ -2796,16 +2796,16 @@ str_view(x, &quot;apple&quot;)</code></pre>
 </ul>
 <pre class="r"><code># 마침표가 a와 c 중간에 있는 문자열과 매치되는 문자열 찾기.
 str_view(c(&quot;abc&quot;, &quot;a.c&quot;, &quot;a*c&quot;, &quot;a c&quot;), &quot;a[.]c&quot;)</code></pre>
-<div id="htmlwidget-c01bf4f1b17789f67e9f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c01bf4f1b17789f67e9f">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>a*c<\/li>\n  <li>a c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-90d98d92d428be63c846" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-90d98d92d428be63c846">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li><span class='match'>a.c<\/span><\/li>\n  <li>a*c<\/li>\n  <li>a c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 별표가 모든 문자와 c 중간에 있는 문자열과 매치되는 문자열 찾기.
 str_view(c(&quot;abc&quot;, &quot;a.c&quot;, &quot;a*c&quot;, &quot;a c&quot;), &quot;.[*]c&quot;)</code></pre>
-<div id="htmlwidget-962b3f1ba463741f193c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-962b3f1ba463741f193c">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li>a.c<\/li>\n  <li><span class='match'>a*c<\/span><\/li>\n  <li>a c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-305f8302a361635e9bbe" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-305f8302a361635e9bbe">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li>a.c<\/li>\n  <li><span class='match'>a*c<\/span><\/li>\n  <li>a c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 스페이스가 a 다음에 있는 문자열과 매치되는 문자열 찾기.
 str_view(c(&quot;abc&quot;, &quot;a.c&quot;, &quot;a*c&quot;, &quot;a c&quot;), &quot;a[ ]&quot;)</code></pre>
-<div id="htmlwidget-7efc29e59c12cefc8ec2" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7efc29e59c12cefc8ec2">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li>a.c<\/li>\n  <li>a*c<\/li>\n  <li><span class='match'>a <\/span>c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d7bf44afe9a21b1ce121" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d7bf44afe9a21b1ce121">{"x":{"html":"<ul>\n  <li>abc<\/li>\n  <li>a.c<\/li>\n  <li>a*c<\/li>\n  <li><span class='match'>a <\/span>c<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 숫자와 매치되는 문자열 찾기.
 yes &lt;- c(&quot;5&quot;, &quot;6&quot;, &quot;5&#39;10&quot;, &quot;5 feet&quot;, &quot;4&#39;11&quot;)
 no &lt;- c(&quot; &quot;, &quot;.&quot;, &quot;Five&quot;, &quot;six&quot;)
@@ -2813,42 +2813,42 @@ s &lt;- c(yes, no)
 pattern &lt;- &quot;\\d&quot;
 pattern1 &lt;- &quot;[0-9]&quot;
 str_view(s, pattern)</code></pre>
-<div id="htmlwidget-4fcc94e161cd6d4e294f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4fcc94e161cd6d4e294f">{"x":{"html":"<ul>\n  <li><span class='match'>5<\/span><\/li>\n  <li><span class='match'>6<\/span><\/li>\n  <li><span class='match'>5<\/span>'10<\/li>\n  <li><span class='match'>5<\/span> feet<\/li>\n  <li><span class='match'>4<\/span>'11<\/li>\n  <li> <\/li>\n  <li>.<\/li>\n  <li>Five<\/li>\n  <li>six<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-39339c11da546b4450e7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-39339c11da546b4450e7">{"x":{"html":"<ul>\n  <li><span class='match'>5<\/span><\/li>\n  <li><span class='match'>6<\/span><\/li>\n  <li><span class='match'>5<\/span>'10<\/li>\n  <li><span class='match'>5<\/span> feet<\/li>\n  <li><span class='match'>4<\/span>'11<\/li>\n  <li> <\/li>\n  <li>.<\/li>\n  <li>Five<\/li>\n  <li>six<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(s, pattern1)</code></pre>
-<div id="htmlwidget-0ad081b65e85446b0f52" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0ad081b65e85446b0f52">{"x":{"html":"<ul>\n  <li><span class='match'>5<\/span><\/li>\n  <li><span class='match'>6<\/span><\/li>\n  <li><span class='match'>5<\/span>'10<\/li>\n  <li><span class='match'>5<\/span> feet<\/li>\n  <li><span class='match'>4<\/span>'11<\/li>\n  <li> <\/li>\n  <li>.<\/li>\n  <li>Five<\/li>\n  <li>six<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a3bd541af63c1a89186b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a3bd541af63c1a89186b">{"x":{"html":"<ul>\n  <li><span class='match'>5<\/span><\/li>\n  <li><span class='match'>6<\/span><\/li>\n  <li><span class='match'>5<\/span>'10<\/li>\n  <li><span class='match'>5<\/span> feet<\/li>\n  <li><span class='match'>4<\/span>'11<\/li>\n  <li> <\/li>\n  <li>.<\/li>\n  <li>Five<\/li>\n  <li>six<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 숫자 및 문자와 매치되는 문자열 찾기.
 x &lt;- c(&quot;red&quot;, &quot;RED&quot;, &quot;빨강&quot;, &quot;a&quot;, &quot;ㄱ&quot;, &quot;2022&quot;, &quot;.?&quot;)
 str_view(x, &quot;\\w&quot;)</code></pre>
-<div id="htmlwidget-098d4de94e595c3a6fda" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-098d4de94e595c3a6fda">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li><span class='match'>빨<\/span>강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li><span class='match'>ㄱ<\/span><\/li>\n  <li><span class='match'>2<\/span>022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9731d16fcf253a19046d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9731d16fcf253a19046d">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li><span class='match'>빨<\/span>강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li><span class='match'>ㄱ<\/span><\/li>\n  <li><span class='match'>2<\/span>022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 한글과 매치되는 문자열 찾기.
 str_view(x, &quot;[ㄱ-ㅎㅏ-ㅣ가-힣]&quot;)</code></pre>
-<div id="htmlwidget-d69b5f70ba555ccf4369" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d69b5f70ba555ccf4369">{"x":{"html":"<ul>\n  <li>red<\/li>\n  <li>RED<\/li>\n  <li><span class='match'>빨<\/span>강<\/li>\n  <li>a<\/li>\n  <li><span class='match'>ㄱ<\/span><\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-4bcc285f933c3abd1fac" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4bcc285f933c3abd1fac">{"x":{"html":"<ul>\n  <li>red<\/li>\n  <li>RED<\/li>\n  <li><span class='match'>빨<\/span>강<\/li>\n  <li>a<\/li>\n  <li><span class='match'>ㄱ<\/span><\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 알파벳과 매치되는 문자열 찾기.
 str_view(x, &quot;[a-z]&quot;)</code></pre>
-<div id="htmlwidget-929cb057cead0b19da4c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-929cb057cead0b19da4c">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li>RED<\/li>\n  <li>빨강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-513f8028411bb4a8eb40" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-513f8028411bb4a8eb40">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li>RED<\/li>\n  <li>빨강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;[A-Z]&quot;)</code></pre>
-<div id="htmlwidget-02bb260e05cf425cc96c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-02bb260e05cf425cc96c">{"x":{"html":"<ul>\n  <li>red<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li>빨강<\/li>\n  <li>a<\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-03503d26c29ba68d77cf" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-03503d26c29ba68d77cf">{"x":{"html":"<ul>\n  <li>red<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li>빨강<\/li>\n  <li>a<\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;[a-zA-Z]&quot;)</code></pre>
-<div id="htmlwidget-d8465aa49ad4e97fa2af" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d8465aa49ad4e97fa2af">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li>빨강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a986b2452dfd19907539" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a986b2452dfd19907539">{"x":{"html":"<ul>\n  <li><span class='match'>r<\/span>ed<\/li>\n  <li><span class='match'>R<\/span>ED<\/li>\n  <li>빨강<\/li>\n  <li><span class='match'>a<\/span><\/li>\n  <li>ㄱ<\/li>\n  <li>2022<\/li>\n  <li>.?<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>|</code>: 두 개 이상의 패턴 중 하나를 선택할 것을 지시하는
 메타문자.</li>
 </ul>
 <pre class="r"><code># abc 또는 d..f(d로 시작하고 f로 끝나는 네 글자 문자) 문자열과 매치되는 문자열 찾기.
 str_view(c(&quot;acb&quot;, &quot;deep&quot;, &quot;abc&quot;, &quot;kabcd&quot;, &quot;a deaf&quot;), &quot;abc|d..f&quot;)</code></pre>
-<div id="htmlwidget-5dc2c404f303fa170e26" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5dc2c404f303fa170e26">{"x":{"html":"<ul>\n  <li>acb<\/li>\n  <li>deep<\/li>\n  <li><span class='match'>abc<\/span><\/li>\n  <li>k<span class='match'>abc<\/span>d<\/li>\n  <li>a <span class='match'>deaf<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-11789a28f138f4eda003" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-11789a28f138f4eda003">{"x":{"html":"<ul>\n  <li>acb<\/li>\n  <li>deep<\/li>\n  <li><span class='match'>abc<\/span><\/li>\n  <li>k<span class='match'>abc<\/span>d<\/li>\n  <li>a <span class='match'>deaf<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># gr와 y 사이에 e 또는 a가 있는 문자열과 매치되는 문자열 찾기.
 str_view(c(&quot;grey&quot;, &quot;gray&quot;), &quot;gr(e|a)y&quot;)</code></pre>
-<div id="htmlwidget-f1f1c947b4b9641f72be" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f1f1c947b4b9641f72be">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-27cd9996b272f83e2ff1" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27cd9996b272f83e2ff1">{"x":{"html":"<ul>\n  <li><span class='match'>grey<\/span><\/li>\n  <li><span class='match'>gray<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="반복repetition" class="section level2">
 <h2>(4) 반복(repetition)</h2>
@@ -2865,29 +2865,29 @@ str_view(c(&quot;grey&quot;, &quot;gray&quot;), &quot;gr(e|a)y&quot;)</code></pr
 yes &lt;- c(&quot;AB&quot;, &quot;A1B&quot;, &quot;A11B&quot;, &quot;A111B&quot;, &quot;A1111B&quot;)
 no &lt;- c(&quot;A2B&quot;, &quot;A21B&quot;)
 str_view(yes, &quot;A1*B&quot;)</code></pre>
-<div id="htmlwidget-100f37925461569ec386" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-100f37925461569ec386">{"x":{"html":"<ul>\n  <li><span class='match'>AB<\/span><\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li><span class='match'>A11B<\/span><\/li>\n  <li><span class='match'>A111B<\/span><\/li>\n  <li><span class='match'>A1111B<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-21bf7bb9aef13844ed22" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21bf7bb9aef13844ed22">{"x":{"html":"<ul>\n  <li><span class='match'>AB<\/span><\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li><span class='match'>A11B<\/span><\/li>\n  <li><span class='match'>A111B<\/span><\/li>\n  <li><span class='match'>A1111B<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(no, &quot;A1*B&quot;)</code></pre>
-<div id="htmlwidget-a64af80bbc72468086eb" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a64af80bbc72468086eb">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-8b1be7d0f22dc1ad4ffa" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8b1be7d0f22dc1ad4ffa">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># +를 사용한 문자열 찾기 예시.
 yes &lt;- c(&quot;AB&quot;, &quot;A1B&quot;, &quot;A11B&quot;, &quot;A111B&quot;, &quot;A1111B&quot;)
 no &lt;- c(&quot;A2B&quot;, &quot;A21B&quot;)
 str_view(yes, &quot;A1+B&quot;)</code></pre>
-<div id="htmlwidget-9072cab8101fd008b028" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9072cab8101fd008b028">{"x":{"html":"<ul>\n  <li>AB<\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li><span class='match'>A11B<\/span><\/li>\n  <li><span class='match'>A111B<\/span><\/li>\n  <li><span class='match'>A1111B<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-387e4fff70a727315d1a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-387e4fff70a727315d1a">{"x":{"html":"<ul>\n  <li>AB<\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li><span class='match'>A11B<\/span><\/li>\n  <li><span class='match'>A111B<\/span><\/li>\n  <li><span class='match'>A1111B<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(no, &quot;A1+B&quot;)</code></pre>
-<div id="htmlwidget-9c5c146010995c8c39c9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9c5c146010995c8c39c9">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b5f514e844579023b71e" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b5f514e844579023b71e">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># ?를 사용한 문자열 찾기 예시.
 yes &lt;- c(&quot;AB&quot;, &quot;A1B&quot;, &quot;A11B&quot;, &quot;A111B&quot;, &quot;A1111B&quot;)
 no &lt;- c(&quot;A2B&quot;, &quot;A21B&quot;)
 str_view(yes, &quot;A1?B&quot;)</code></pre>
-<div id="htmlwidget-990aa19eee21d89c43a1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-990aa19eee21d89c43a1">{"x":{"html":"<ul>\n  <li><span class='match'>AB<\/span><\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li>A11B<\/li>\n  <li>A111B<\/li>\n  <li>A1111B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-68c2bb51443a01924ff2" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-68c2bb51443a01924ff2">{"x":{"html":"<ul>\n  <li><span class='match'>AB<\/span><\/li>\n  <li><span class='match'>A1B<\/span><\/li>\n  <li>A11B<\/li>\n  <li>A111B<\/li>\n  <li>A1111B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(no, &quot;A1?B&quot;)</code></pre>
-<div id="htmlwidget-50c28d07901184548df1" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-50c28d07901184548df1">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b0addaffef57cbb4bda9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b0addaffef57cbb4bda9">{"x":{"html":"<ul>\n  <li>A2B<\/li>\n  <li>A21B<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>tibble(string = c(&quot;AB&quot;, &quot;A1B&quot;, &quot;A11B&quot;, &quot;A111B&quot;, &quot;A1111B&quot;),
        none_or_more = str_detect(yes, &quot;A1*B&quot;),
        nore_or_once = str_detect(yes, &quot;A1?B&quot;),
@@ -2917,23 +2917,23 @@ str_view(yes, &quot;A1?B&quot;)</code></pre>
 <pre class="r"><code># 숫자를 이용한 문자열 찾기 예시 1.
 x &lt;- &quot;1888 is the longest year in Roman numerals: MDCCCLXXXVIII&quot;
 str_view(x, &quot;C{2}&quot;)</code></pre>
-<div id="htmlwidget-7392aa607e833360629c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7392aa607e833360629c">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-028ad31ed4be3ceeee54" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-028ad31ed4be3ceeee54">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;C{2,}&quot;)</code></pre>
-<div id="htmlwidget-4e6b4a6ef925d24b614e" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4e6b4a6ef925d24b614e">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-05730122a35714679ca7" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-05730122a35714679ca7">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &quot;C{2,3}&quot;) # C가 3개인 문자열과 매치시켜줌.</code></pre>
-<div id="htmlwidget-a2dcf8748cd51b79b9f9" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a2dcf8748cd51b79b9f9">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-7e8a3f4f1461defc9be0" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7e8a3f4f1461defc9be0">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CCC<\/span>LXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &#39;C{2,3}?&#39;) # C가 2개인 문자열과 매치시켜줌.</code></pre>
-<div id="htmlwidget-e991b822872e9d62028a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e991b822872e9d62028a">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c0117932f51a02fb44ad" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c0117932f51a02fb44ad">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MD<span class='match'>CC<\/span>CLXXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &#39;C[LX]+&#39;) # X가 1개 이상인 문자열과 매치시켜줌.</code></pre>
-<div id="htmlwidget-d885e18e5db821fdcf8c" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d885e18e5db821fdcf8c">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-244c0ef86fb2751a361b" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-244c0ef86fb2751a361b">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CLXXX<\/span>VIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(x, &#39;C[LX]+?&#39;) # X가 0개인 문자열과 매치시켜줌.</code></pre>
-<div id="htmlwidget-416206e46fb73814592d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-416206e46fb73814592d">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CL<\/span>XXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d91f763793625f08ba43" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d91f763793625f08ba43">{"x":{"html":"<ul>\n  <li>1888 is the longest year in Roman numerals: MDCC<span class='match'>CL<\/span>XXXVIII<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <ul>
 <li><code>^</code>: 문자열의 시작.</li>
 <li><code>[4-7]</code>: 4,5,6 또는 7.</li>
@@ -2947,11 +2947,11 @@ pattern &lt;- &quot;^[4-7]&#39;\\d{1,2}\&quot;$&quot;
 yes &lt;- c(&quot;5&#39;7\&quot;&quot;, &quot;6&#39;2\&quot;&quot;,  &quot;5&#39;12\&quot;&quot;)
 no &lt;- c(&quot;6,2\&quot;&quot;, &quot;6.2\&quot;&quot;,&quot;I am 5&#39;11\&quot;&quot;, &quot;3&#39;2\&quot;&quot;, &quot;64&quot;)
 str_view(yes, pattern)</code></pre>
-<div id="htmlwidget-0e1bfa4923181d994f95" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0e1bfa4923181d994f95">{"x":{"html":"<ul>\n  <li><span class='match'>5'7\"<\/span><\/li>\n  <li><span class='match'>6'2\"<\/span><\/li>\n  <li><span class='match'>5'12\"<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-86eea5e558f1dfa62c1a" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-86eea5e558f1dfa62c1a">{"x":{"html":"<ul>\n  <li><span class='match'>5'7\"<\/span><\/li>\n  <li><span class='match'>6'2\"<\/span><\/li>\n  <li><span class='match'>5'12\"<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(no, pattern)</code></pre>
-<div id="htmlwidget-34c403c1b0937b4f79ae" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-34c403c1b0937b4f79ae">{"x":{"html":"<ul>\n  <li>6,2\"<\/li>\n  <li>6.2\"<\/li>\n  <li>I am 5'11\"<\/li>\n  <li>3'2\"<\/li>\n  <li>64<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd349c01a48fbdbd6374" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd349c01a48fbdbd6374">{"x":{"html":"<ul>\n  <li>6,2\"<\/li>\n  <li>6.2\"<\/li>\n  <li>I am 5'11\"<\/li>\n  <li>3'2\"<\/li>\n  <li>64<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="문자열-묶기grouping-및-역참조backreference" class="section level2">
@@ -2969,16 +2969,16 @@ group)과 매치되는 똑같은 텍스트를 다시 찾아줌.</li>
 </ul>
 <pre class="r"><code># 역참조 예시 1.
 str_view(fruit, &quot;(..)\\1&quot;, match = TRUE)</code></pre>
-<div id="htmlwidget-9e38842159599097211b" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9e38842159599097211b">{"x":{"html":"<ul>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li><span class='match'>coco<\/span>nut<\/li>\n  <li><span class='match'>cucu<\/span>mber<\/li>\n  <li><span class='match'>juju<\/span>be<\/li>\n  <li><span class='match'>papa<\/span>ya<\/li>\n  <li>s<span class='match'>alal<\/span> berry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-775bd41b76b28464b9e9" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-775bd41b76b28464b9e9">{"x":{"html":"<ul>\n  <li>b<span class='match'>anan<\/span>a<\/li>\n  <li><span class='match'>coco<\/span>nut<\/li>\n  <li><span class='match'>cucu<\/span>mber<\/li>\n  <li><span class='match'>juju<\/span>be<\/li>\n  <li><span class='match'>papa<\/span>ya<\/li>\n  <li>s<span class='match'>alal<\/span> berry<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code># 역참조 예시 2.
 x &lt;- &quot;This is a block of of text,
 several words here are are
 repeated, and and they
 should not be.&quot;
 str_view_all(x, &quot;[ ]+(\\w+)[ ]+\\1&quot;, match = TRUE)</code></pre>
-<div id="htmlwidget-c75dfc2e2a17deafd8b8" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c75dfc2e2a17deafd8b8">{"x":{"html":"<ul>\n  <li>This is a block<span class='match'> of of<\/span> text,\nseveral words here<span class='match'> are are<\/span>\nrepeated,<span class='match'> and and<\/span> they\nshould not be.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ddaaae5d6edfb889423c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ddaaae5d6edfb889423c">{"x":{"html":"<ul>\n  <li>This is a block<span class='match'> of of<\/span> text,\nseveral words here<span class='match'> are are<\/span>\nrepeated,<span class='match'> and and<\/span> they\nshould not be.<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div id="주요-함수" class="section level1">
@@ -3066,8 +3066,8 @@ df %&gt;%
 str_count(&quot;abababa&quot;, &quot;aba&quot;) # 중복탐지가 허용된다면, 3이 반환될 것임.</code></pre>
 <pre><code>## [1] 2</code></pre>
 <pre class="r"><code>str_view_all(&quot;abababa&quot;, &quot;aba&quot;)</code></pre>
-<div id="htmlwidget-4271dd6c1b613cb92b1f" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-4271dd6c1b613cb92b1f">{"x":{"html":"<ul>\n  <li><span class='match'>aba<\/span>b<span class='match'>aba<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e34b36d7f53771fc5b61" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e34b36d7f53771fc5b61">{"x":{"html":"<ul>\n  <li><span class='match'>aba<\/span>b<span class='match'>aba<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="매치-추출하기" class="section level2">
 <h2>(2) 매치 추출하기</h2>
@@ -3456,8 +3456,8 @@ fields %&gt;% str_split(&quot;: &quot;, n = 2, simplify = TRUE)</code></pre>
 <pre class="r"><code># boundary 논항 활용하기.
 x &lt;- &quot;이것은 문장입니다. 이것은 문장이라고 할 수 있습니다&quot;
 str_view_all(x, boundary(&quot;word&quot;))</code></pre>
-<div id="htmlwidget-c26db1ae762e260cd17d" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c26db1ae762e260cd17d">{"x":{"html":"<ul>\n  <li><span class='match'>이것은<\/span> <span class='match'>문장입니다<\/span>. <span class='match'>이것은<\/span> <span class='match'>문장이라고<\/span> <span class='match'>할<\/span> <span class='match'>수<\/span> <span class='match'>있습니다<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-09827e9fc30dcd5af2fd" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-09827e9fc30dcd5af2fd">{"x":{"html":"<ul>\n  <li><span class='match'>이것은<\/span> <span class='match'>문장입니다<\/span>. <span class='match'>이것은<\/span> <span class='match'>문장이라고<\/span> <span class='match'>할<\/span> <span class='match'>수<\/span> <span class='match'>있습니다<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>x %&gt;%
   str_split(boundary(&quot;word&quot;)) %&gt;%
   .[[1]]</code></pre>
@@ -3502,11 +3502,11 @@ fruit[1:10]</code></pre>
 <code>regex()</code> 함수를 호출함.</li>
 </ul>
 <pre class="r"><code>str_view(fruit[1:5], &quot;nana&quot;)</code></pre>
-<div id="htmlwidget-fce932c3cdaa18bc9c25" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fce932c3cdaa18bc9c25">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-76cda01e1ffdbb7503a4" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-76cda01e1ffdbb7503a4">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(fruit[1:5], regex(&quot;nana&quot;))</code></pre>
-<div id="htmlwidget-0206c5be3a541ec13b97" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0206c5be3a541ec13b97">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-a0fba2bb6a4260ae985d" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a0fba2bb6a4260ae985d">{"x":{"html":"<ul>\n  <li>apple<\/li>\n  <li>apricot<\/li>\n  <li>avocado<\/li>\n  <li>ba<span class='match'>nana<\/span><\/li>\n  <li>bell pepper<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <div id="ignore_case-true-논항" class="section level2">
 <h2>(1) <code>ignore_case = TRUE</code> 논항</h2>
 <ul>
@@ -3516,11 +3516,11 @@ fruit[1:10]</code></pre>
 <pre class="r"><code># 대소문자 여부를 가리지 않고 매치되는 문자열 찾기.
 bananas &lt;- c(&quot;banana&quot;, &quot;Banana&quot;, &quot;BANANA&quot;)
 str_view(bananas, &quot;banana&quot;)</code></pre>
-<div id="htmlwidget-bb27e42dace5a3d95d73" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bb27e42dace5a3d95d73">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-06d814fec02566e8a71c" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-06d814fec02566e8a71c">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li>Banana<\/li>\n  <li>BANANA<\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view(bananas, regex(&quot;banana&quot;, ignore_case = TRUE))</code></pre>
-<div id="htmlwidget-c79ef5a175c34411c3ff" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c79ef5a175c34411c3ff">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li><span class='match'>Banana<\/span><\/li>\n  <li><span class='match'>BANANA<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-21a99419a12b881f4913" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-21a99419a12b881f4913">{"x":{"html":"<ul>\n  <li><span class='match'>banana<\/span><\/li>\n  <li><span class='match'>Banana<\/span><\/li>\n  <li><span class='match'>BANANA<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="multiline-true-논항" class="section level2">
 <h2>(2) <code>multiline = TRUE</code> 논항</h2>
@@ -3557,16 +3557,16 @@ str_match(&quot;514-791-8141&quot;, phone)</code></pre>
 <div id="dotall-true-논항" class="section level2">
 <h2>(4) <code>dotall = TRUE</code> 논항</h2>
 <ul>
-<li>설명: 메타캐릭터 <code>.</code>가 행갈이 <code>\n</code>까지
-포함하여 모든 것과 매치되도록 해줌.</li>
+<li>설명: 메타캐릭터 <code>.</code>가 행갈이 <code>\n</code>까지 포함한
+모든 것과 매치되도록 해줌.</li>
 </ul>
 <pre class="r"><code>x &lt;- &quot;Line 1\nLine 2\nLine 3&quot;
 str_view_all(x, &quot;.&quot;)</code></pre>
-<div id="htmlwidget-44e5b62e0bc24aded962" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-44e5b62e0bc24aded962">{"x":{"html":"<ul>\n  <li><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>1<\/span>\n<span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>2<\/span>\n<span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>3<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-88e68d01a274b21446b8" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-88e68d01a274b21446b8">{"x":{"html":"<ul>\n  <li><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>1<\/span>\n<span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>2<\/span>\n<span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>3<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>str_view_all(x, regex(&quot;.&quot;, dotall = TRUE))</code></pre>
-<div id="htmlwidget-3c20686792028e56783a" style="width:960px;height:100%;" class="str_view html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3c20686792028e56783a">{"x":{"html":"<ul>\n  <li><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>1<\/span><span class='match'>\n<\/span><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>2<\/span><span class='match'>\n<\/span><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>3<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-935eb71a882b516ca72f" style="width:960px;height:100%;" class="str_view html-widget"></div>
+<script type="application/json" data-for="htmlwidget-935eb71a882b516ca72f">{"x":{"html":"<ul>\n  <li><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>1<\/span><span class='match'>\n<\/span><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>2<\/span><span class='match'>\n<\/span><span class='match'>L<\/span><span class='match'>i<\/span><span class='match'>n<\/span><span class='match'>e<\/span><span class='match'> <\/span><span class='match'>3<\/span><\/li>\n<\/ul>"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 
