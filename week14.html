@@ -1630,15 +1630,15 @@ div.tocify {
 <li>음절 빈도 효과(syllable frequency effects): <strong>첫 음절을
 공유하는 단어들의 누적 토큰빈도</strong>가 높은 단어일수록 반응시간과
 오류율이 증가하는 현상.</li>
-<li>음절 이웃 빈도 효과(syllable neighborhood frequency effects):
-<strong>고빈도 음절 이웃(첫 음절을 공유하면서 목표단어보다 토큰 빈도가
-높은 단어)</strong>이 적은 단어를 재인할 때는 음절 이웃 크기가
-촉진효과를 나타냄. 그러나 고빈도 음절 이웃이 많은 단어를 재인할 때는
-음절 이웃 크기가 억제효과를 보임.</li>
+<li>음절 이웃 빈도 효과(syllable neighborhood frequency
+effects)[^note1]: <strong>고빈도 음절 이웃(첫 음절을 공유하면서
+목표단어보다 토큰 빈도가 높은 단어)</strong>이 적은 단어를 재인할 때는
+음절 이웃 크기가 촉진효과를 나타냄. 그러나 고빈도 음절 이웃이 많은
+단어를 재인할 때는 음절 이웃 크기가 억제효과를 보임.</li>
 <li>컴퓨터 과학 알고리즘 기반 단어/어절 간 유사성 계산법
 <ul>
 <li>레벤슈타인 거리(Levenshtein distance, LD): 컴퓨터 과학 분야에서
-사용되는 표준적 문자열 편집 길이(string eidt distance). 두 단어 간의
+사용되는 표준적 문자열 편집 길이(string edit distance). 두 단어 간의
 레벤슈타인 거리는 한 단어를 다른 단어로 변환하는 데 필요한 최소한의
 대체, 삽입 또는 삭제 작업 횟수를 가리킴.
 <ul>
@@ -1649,9 +1649,9 @@ div.tocify {
 <li>삭제: 집필 <span class="math inline">\(\rightarrow\)</span> 지필. ㅂ
 <span class="math inline">\(\rightarrow\)</span> ø.</li>
 </ul></li>
-<li>철자적 레벤슈타인 거리(Orthographic Levenshtein Distance, OLD20): 한
-단어와 가장 가까운 레벤슈타인 철자 이웃 20개 간의 평균 레벤슈타인
-거리.</li>
+<li>철자적 레벤슈타인 거리(Orthographic Levenshtein Distance,
+OLD20)[^note2]: 한 단어와 가장 가까운 레벤슈타인 철자 이웃 20개 간의
+평균 레벤슈타인 거리.</li>
 <li>레벤슈타인 이웃 빈도: 가장 가까운 레벤슈타인 철자 이웃 20개의 평균
 빈도.</li>
 </ul></li>
@@ -1668,14 +1668,11 @@ div.tocify {
 </ul>
 <div id="여러-파일-동시에-불러와-처리하기" class="section level4">
 <h4>1) 여러 파일 동시에 불러와 처리하기</h4>
-</div>
-</div>
-<div id="모든-말뭉치-원자료-파일명에-대한-목록-작성하기." class="section level3">
-<h3>모든 말뭉치 원자료 파일명에 대한 목록 작성하기.</h3>
 <ul>
-<li>여러 파일 한꺼번에 불러들이기: <strong>purrr</strong>의
+<li><p>모든 말뭉치 원자료 파일명에 대한 목록 작성하기.</p></li>
+<li><p>여러 파일 한꺼번에 불러들이기: <strong>purrr</strong>의
 <code>map</code> 함수를 이용하면 여러 파일을 한꺼번에 불러들일 수
-있음.</li>
+있음.</p></li>
 </ul>
 <pre class="r"><code>library(tidyverse)
 # 말뭉치 파일 목록 작성하기.
@@ -1855,6 +1852,7 @@ whole.2gram &lt;- txt.to.words(sejong.2$tagged, splitting.rule =&quot;[\n]+&quot
 whole.2gram.tb &lt;- data.table(bigram = whole.2gram) %&gt;%
   separate(bigram, into = c(&quot;eojeol.1&quot;, &quot;eojeol.2&quot;), sep = &quot; &quot;) %&gt;%
   as_tibble()</code></pre>
+</div>
 <div id="원하는-문장구조-추출하기" class="section level4">
 <h4>2) 원하는 문장구조 추출하기</h4>
 <ul>
@@ -2329,7 +2327,7 @@ leven.neigh &lt;- map(whole.2gram.ov.nng10.3.top10$jamo_split_nng,
 <ul>
 <li>OLD20이 높다면 철자적 이웃이 많은 단어(orthographically dense
 neighborhood 출신)일 것</li>
-<li>OLD20이낮다면 철자적 이웃이 적은 단어(orthographically sparse
+<li>OLD20이 낮다면 철자적 이웃이 적은 단어(orthographically sparse
 neighborhood 출신)일 것.</li>
 </ul></li>
 </ul>
@@ -2341,6 +2339,14 @@ old20.neigh &lt;- old20(whole.2gram.ov.nng10.3.top10$jamo_split_nng,
 old20.neigh.1 &lt;- as_tibble(old20.neigh) %&gt;%
   mutate(jamo_split = names(old20.neigh)) %&gt;%
   rename(old20 = value)</code></pre>
+<p>[^note1] Levenshtein, V. I. (1966). Binary codes capable of
+correcting dele- tions, insertions and reversals. <em>Soviet Physics
+Doklady, 10</em>, 707.</p>
+<p>[^note2] Yap, M. J., &amp; Balota, D. A. (2009). Visual word
+recognition of multisyllabic words. <em>Journal of Memory and Language,
+60</em>(4), 502-529. Yarkoni, T., Balota, D., &amp; Yap, M. (2008).
+Moving beyond Coltheart’s N: A new measure of orthographic similarity.
+<em>Psychonomic Bulletin &amp; Review, 15</em>(5), 971-979.</p>
 </div>
 </div>
 </div>
