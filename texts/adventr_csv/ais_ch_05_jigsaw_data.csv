@@ -1,0 +1,241 @@
+﻿ID,Employee,Job_Type,Footspeed,Strength,Vision,Sex
+1,JIG:SAW Employee,Scientists,13.88,1161,1.344488333,Female
+2,JIG:SAW Employee,Scientists,17.34,1141,0.389955548,Male
+3,JIG:SAW Employee,Scientists,14.06,1174,0.771003741,Female
+4,Non-Employee,Scientists,21.84,1321,0.646338733,Male
+5,JIG:SAW Employee,Scientists,15.53,1112,0.347898178,Male
+6,Non-Employee,Scientists,16.27,1153,0.405843225,Male
+7,JIG:SAW Employee,Scientists,14.52,1185,0.356285754,Female
+8,JIG:SAW Employee,Scientists,12.22,1095,0.732594536,Female
+9,Non-Employee,Scientists,16.59,1072,0.513976563,Female
+10,Non-Employee,Scientists,13.88,1218,0.438118046,Female
+11,Non-Employee,Scientists,9.77,1088,0.645147604,Female
+12,JIG:SAW Employee,Scientists,12.27,1102,0.787479902,Female
+13,JIG:SAW Employee,Scientists,15.81,1112,0.780354341,Female
+14,JIG:SAW Employee,Scientists,11.95,1071,1.00625159,Female
+15,Non-Employee,Scientists,14.81,1373,0.650084162,Male
+16,JIG:SAW Employee,Scientists,15.58,1244,0.619562182,Male
+17,JIG:SAW Employee,Scientists,13.63,1102,0.696021517,Female
+18,JIG:SAW Employee,Scientists,14.15,1216,0.624497549,Male
+19,Non-Employee,Scientists,9.9,1135,0.668375761,Female
+20,Non-Employee,Scientists,15.74,1055,0.559234101,Female
+21,Non-Employee,Scientists,16.92,1096,0.460166777,Female
+22,JIG:SAW Employee,Scientists,12.2,1884,0.639361513,Male
+23,JIG:SAW Employee,Scientists,16.15,1276,0.333820938,Male
+24,JIG:SAW Employee,Scientists,17.87,1373,0.923281451,Male
+25,Non-Employee,Scientists,8.43,1007,0.624242162,Female
+26,Non-Employee,Scientists,13.32,1223,0.323961057,Male
+27,Non-Employee,Scientists,13.96,1291,0.334597047,Male
+28,Non-Employee,Scientists,12.54,1171,0.549629086,Male
+29,JIG:SAW Employee,Code 1318,6.63,1931,0.01,Male
+30,Non-Employee,Scientists,10.25,1101,0.514156704,Female
+31,JIG:SAW Employee,Scientists,13.78,1145,0.714606334,Female
+32,Non-Employee,Scientists,24.39,2091,0.787460933,Male
+33,Non-Employee,Scientists,15.52,1308,0.560831807,Female
+34,Non-Employee,Scientists,11.25,1141,0.946517665,Female
+35,Non-Employee,Scientists,15.61,1433,0.647614558,Male
+36,Non-Employee,Scientists,16.32,1141,0.748277169,Male
+37,Non-Employee,Scientists,12.98,1212,0.316059313,Female
+38,JIG:SAW Employee,Scientists,14.79,1169,0.632633474,Female
+39,Non-Employee,Scientists,17.75,1769,0.787405047,Male
+40,JIG:SAW Employee,Scientists,13.69,1136,0.949003901,Female
+41,JIG:SAW Employee,Scientists,16.75,1313,0.469406051,Male
+42,Non-Employee,Scientists,8.24,1071,0.377036978,Female
+43,JIG:SAW Employee,Scientists,13.49,1129,0.427712005,Female
+44,JIG:SAW Employee,Scientists,15.21,1119,1.244314254,Male
+45,Non-Employee,Scientists,15.38,1412,0.534592268,Male
+46,JIG:SAW Employee,Code 1318,19.68,2018,0.04,Male
+47,JIG:SAW Employee,Scientists,15.1,1197,1.715736173,Male
+48,JIG:SAW Employee,Code 1318,26.05,1894,0.17,Female
+49,Non-Employee,Scientists,14.26,1214,0.656508505,Female
+50,Non-Employee,Scientists,14.09,1031,0.584321049,Female
+51,JIG:SAW Employee,Scientists,16.62,1111,0.654092275,Female
+52,Non-Employee,Scientists,12.74,1209,0.397486141,Female
+53,JIG:SAW Employee,Scientists,15.79,1121,0.883663032,Female
+54,JIG:SAW Employee,Scientists,15.82,1274,0.76504601,Male
+55,JIG:SAW Employee,Scientists,15.17,1197,0.888477861,Male
+56,JIG:SAW Employee,Scientists,13.71,1139,0.425003391,Female
+57,Non-Employee,Scientists,13.15,1222,0.544282621,Female
+58,Non-Employee,Scientists,12.66,1241,0.403321076,Male
+59,Non-Employee,Scientists,20.96,1740,0.731604584,Male
+60,JIG:SAW Employee,Scientists,15.56,1233,0.431468216,Male
+61,Non-Employee,Scientists,9.38,1367,0.622533721,Female
+62,JIG:SAW Employee,Scientists,16.86,1334,0.698254681,Male
+63,Non-Employee,Scientists,14.45,1313,0.614287812,Male
+64,Non-Employee,Security,14.44,1123,0.6402272,Male
+65,JIG:SAW Employee,Scientists,13.26,1150,0.412,Female
+66,JIG:SAW Employee,Scientists,13.95,1138,1.30148306,Male
+67,Non-Employee,Scientists,12.71,1208,0.451100483,Female
+68,JIG:SAW Employee,Scientists,18.53,1185,0.729007961,Female
+69,JIG:SAW Employee,Scientists,15.24,1158,0.619592374,Female
+70,Non-Employee,Scientists,11.93,1257,0.804042826,Female
+71,JIG:SAW Employee,Code 1318,1.19,1083,0.03517639,Female
+72,JIG:SAW Employee,Scientists,19.64,1445,1.55108466,Male
+73,Non-Employee,Scientists,16.27,1376,0.527297753,Female
+74,JIG:SAW Employee,Scientists,19.77,1525,0.757792948,Female
+75,JIG:SAW Employee,Scientists,13.32,1408,0.620652047,Male
+76,Non-Employee,Scientists,11.72,1155,0.466064235,Female
+77,Non-Employee,Scientists,14.34,1065,0.442620852,Female
+78,JIG:SAW Employee,Scientists,12.04,1128,0.805424032,Female
+79,Non-Employee,Scientists,11.52,1147,0.477275334,Female
+80,Non-Employee,Scientists,12.73,1166,0.558432557,Male
+81,Non-Employee,Scientists,18.83,1566,0.716738054,Male
+82,JIG:SAW Employee,Scientists,16.38,1723,0.996064908,Female
+83,Non-Employee,Scientists,11.5,1436,0.482178113,Female
+84,Non-Employee,Security,12.15,1137,0.45293588,Female
+85,Non-Employee,Security,15.54,1370,0.505481566,Male
+86,Non-Employee,Security,15.28,1174,0.519545102,Female
+87,JIG:SAW Employee,Security,13.64,1125,0.6365122,Female
+88,Non-Employee,Security,20,1148,0.972312194,Male
+89,Non-Employee,Security,11.44,986,0.934882607,Female
+90,Non-Employee,Security,9.25,1229,0.427141388,Female
+91,Non-Employee,Security,8.81,1084,0.965568813,Female
+92,Non-Employee,Security,16.35,1134,0.546610965,Male
+93,Non-Employee,Security,21.31,1931,0.718801608,Male
+94,JIG:SAW Employee,Security,18.94,1122,0.433203524,Male
+95,Non-Employee,Security,13.51,1233,0.724387283,Male
+96,Non-Employee,Security,8.49,1732,0.917841716,Male
+97,Non-Employee,Security,12.82,1072,0.67208781,Male
+98,Non-Employee,Security,10.16,1259,0.468833418,Male
+99,Non-Employee,Security,17.91,1580,0.420751356,Male
+100,JIG:SAW Employee,Security,14.05,1578,0.549437848,Female
+101,JIG:SAW Employee,Security,20.33,1495,0.952610474,Male
+102,JIG:SAW Employee,Security,15.83,1178,1.29311779,Female
+103,JIG:SAW Employee,Code 1318,20.01,2540,0.04,Male
+104,Non-Employee,Security,16.66,1281,0.83406749,Female
+105,Non-Employee,Security,15.97,1055,0.872926342,Female
+106,JIG:SAW Employee,Security,15.22,1347,1.326871217,Female
+107,Non-Employee,Security,12.89,1273,0.937844777,Male
+108,JIG:SAW Employee,Security,13.81,1155,0.738603107,Female
+109,JIG:SAW Employee,Security,14,1103,0.78757882,Male
+110,JIG:SAW Employee,Code 1318,19.98,2077,0.15,Male
+111,Non-Employee,Security,12.83,1020,0.421933015,Female
+112,Non-Employee,Security,9.8,952,0.756925157,Female
+113,Non-Employee,Security,10.49,1256,0.627328456,Female
+114,JIG:SAW Employee,Security,16,1152,0.756451439,Male
+115,JIG:SAW Employee,Security,14.52,1326,0.551900442,Female
+116,Non-Employee,Security,11.55,1393,0.594387332,Female
+117,JIG:SAW Employee,Code 1318,9.63,2008,0.12,Male
+118,JIG:SAW Employee,Security,13.11,1396,0.508021613,Female
+119,JIG:SAW Employee,Security,18,1382,0.739975091,Male
+120,JIG:SAW Employee,Security,16.23,1290,0.695754821,Male
+121,Non-Employee,Security,10.41,1090,0.586186419,Female
+122,Non-Employee,Security,18.65,1361,0.601719253,Male
+123,Non-Employee,Security,17.11,1441,0.777537611,Female
+124,JIG:SAW Employee,Security,16.99,1108,0.828322578,Female
+125,JIG:SAW Employee,Security,20.49,1527,1.111528116,Male
+126,JIG:SAW Employee,Code 1318,8.86,2008,0.17,Male
+127,JIG:SAW Employee,Code 1318,7.06,2004,0.07,Male
+128,JIG:SAW Employee,Security,13.41,1122,0.372515785,Female
+129,Non-Employee,Security,15.93,1487,0.440809176,Male
+130,JIG:SAW Employee,Professional Services,15.08,1332,1.269123222,Female
+131,Non-Employee,Professional Services,9.43,1084,0.654056433,Female
+132,JIG:SAW Employee,Professional Services,14.83,1188,1.315072792,Female
+133,Non-Employee,Professional Services,14.98,1388,0.77052136,Male
+134,Non-Employee,Professional Services,11.72,1123,0.501900354,Female
+135,Non-Employee,Professional Services,14.28,1162,0.556847657,Male
+136,Non-Employee,Professional Services,12.57,1311,0.918577646,Male
+137,JIG:SAW Employee,Code 1318,27.44,1872,0.02,Female
+138,Non-Employee,Professional Services,14,1297,0.438157556,Male
+139,Non-Employee,Professional Services,14.43,1435,0.709641298,Male
+140,JIG:SAW Employee,Professional Services,12.2,1094,0.355116141,Female
+141,JIG:SAW Employee,Professional Services,15.49,1174,0.537588803,Female
+142,JIG:SAW Employee,Professional Services,17.16,1114,0.731448754,Female
+143,JIG:SAW Employee,Professional Services,14.59,1268,0.615683449,Male
+144,JIG:SAW Employee,Code 1318,15.31,1534,0.21,Female
+145,JIG:SAW Employee,Professional Services,13.59,1136,0.874611019,Female
+146,JIG:SAW Employee,Code 1318,15.15,1501,0.2,Female
+147,JIG:SAW Employee,Code 1318,29.56,4561,2,Male
+148,Non-Employee,Professional Services,16.68,1160,0.709338235,Female
+149,Non-Employee,Professional Services,15,1503,0.976451417,Male
+150,Non-Employee,Professional Services,16.8,1132,0.936738003,Male
+151,Non-Employee,Professional Services,13.57,1246,0.524115935,Male
+152,JIG:SAW Employee,Professional Services,13.56,1136,1.081242176,Female
+153,JIG:SAW Employee,Professional Services,13.25,1169,1.102,Female
+154,JIG:SAW Employee,Code 1318,20.83,2760,0.15,Male
+155,JIG:SAW Employee,Professional Services,15.18,1403,0.844980555,Female
+156,Non-Employee,Professional Services,22.47,1077,0.74674132,Female
+157,Non-Employee,Professional Services,10.97,1139,0.49294735,Female
+158,JIG:SAW Employee,Professional Services,13.06,1115,0.95248728,Female
+159,Non-Employee,Professional Services,10.46,1127,0.442328696,Female
+160,Non-Employee,Professional Services,13.45,1323,0.467232883,Female
+161,Non-Employee,Professional Services,11.26,1425,0.848382835,Female
+162,JIG:SAW Employee,Professional Services,17.82,1373,1.161239729,Male
+163,Non-Employee,Professional Services,14.96,1388,0.332460296,Male
+164,JIG:SAW Employee,Professional Services,12.68,1106,0.64621716,Female
+165,JIG:SAW Employee,Code 1318,21.6,3044,5.55E-17,Male
+166,JIG:SAW Employee,Professional Services,14.98,1175,0.754854522,Female
+167,JIG:SAW Employee,Professional Services,15.01,1195,1.207082084,Female
+168,Non-Employee,Professional Services,12.14,1191,0.427891151,Female
+169,Non-Employee,Professional Services,11.56,1149,0.316647619,Female
+170,JIG:SAW Employee,Professional Services,15.75,1188,0.836563613,Female
+171,Non-Employee,Professional Services,10.87,1132,0.911151839,Female
+172,Non-Employee,Professional Services,10.38,1110,0.826708866,Female
+173,Non-Employee,Professional Services,15.34,1293,0.882778822,Female
+174,JIG:SAW Employee,Professional Services,13.73,1141,1.136862779,Female
+175,Non-Employee,Professional Services,14.4,1073,0.56948811,Male
+176,JIG:SAW Employee,Professional Services,14.58,1102,0.994663697,Female
+177,Non-Employee,Professional Services,15.44,1040,0.60323894,Female
+178,Non-Employee,Professional Services,10.36,1091,0.820002905,Male
+179,Non-Employee,Professional Services,17.24,1562,0.795028056,Male
+180,Non-Employee,Professional Services,21.3,1054,0.549927709,Male
+181,Non-Employee,Professional Services,13.61,1148,0.30859218,Male
+182,JIG:SAW Employee,Code 1318,12.32,1245,0.06,Female
+183,JIG:SAW Employee,Professional Services,17.2,1339,0.688816931,Male
+184,Non-Employee,Professional Services,12.68,1205,0.304091702,Female
+185,JIG:SAW Employee,Code 1318,0.21,1016,0.09,Female
+186,Non-Employee,Professional Services,13.93,1277,0.423843749,Male
+187,JIG:SAW Employee,Professional Services,17.68,1355,0.936312573,Male
+188,Non-Employee,Professional Services,15.58,1371,0.557115784,Male
+189,JIG:SAW Employee,Code 1318,3.56,1078,0.19,Female
+190,JIG:SAW Employee,Professional Services,14.51,1151,0.463693514,Female
+191,Non-Employee,Professional Services,12.38,994,0.675439641,Female
+192,Non-Employee,Professional Services,14.62,1542,0.626178747,Male
+193,Non-Employee,Professional Services,11.75,1398,0.35418861,Male
+194,Non-Employee,Professional Services,20.9,1145,0.560044394,Female
+195,JIG:SAW Employee,Professional Services,12.86,1480,0.478097285,Male
+196,JIG:SAW Employee,Professional Services,14.88,1069,1.005103186,Male
+197,Non-Employee,Professional Services,11.71,1152,0.59814698,Female
+198,Non-Employee,Professional Services,11.73,1158,0.754529639,Female
+199,JIG:SAW Employee,Professional Services,13.88,1158,1.062508927,Female
+200,Non-Employee,Professional Services,17.52,1432,0.934506374,Female
+201,JIG:SAW Employee,Professional Services,17.03,1338,0.377566591,Male
+202,JIG:SAW Employee,Professional Services,13.69,1138,0.671737141,Female
+203,Non-Employee,Professional Services,14.51,1068,0.749241979,Female
+204,Non-Employee,Professional Services,12.28,1621,0.797712079,Male
+205,JIG:SAW Employee,Professional Services,13.51,1239,0.878243567,Female
+206,Non-Employee,Professional Services,8.51,1073,0.697396052,Female
+207,JIG:SAW Employee,Technicians,12.38,1104,0.287384099,Female
+208,Non-Employee,Technicians,8.68,1568,0.989163713,Male
+209,JIG:SAW Employee,Technicians,9.8,1030,0.667532437,Female
+210,JIG:SAW Employee,Technicians,18.78,1133,0.684234003,Male
+211,JIG:SAW Employee,Technicians,13.16,1117,0.686666125,Female
+212,Non-Employee,Technicians,16.24,1389,0.546944562,Male
+213,JIG:SAW Employee,Technicians,18.83,1684,1.28510425,Female
+214,JIG:SAW Employee,Technicians,12.72,1107,0.788320128,Female
+215,Non-Employee,Technicians,13.66,1250,0.65162487,Female
+216,JIG:SAW Employee,Technicians,14.92,1195,0.893872024,Female
+217,Non-Employee,Technicians,15.01,1395,0.663776224,Male
+218,Non-Employee,Technicians,13.83,1436,0.506225182,Male
+219,JIG:SAW Employee,Technicians,13.91,1165,0.454060545,Female
+220,Non-Employee,Technicians,14.1,1392,0.637878085,Female
+221,JIG:SAW Employee,Technicians,13.1,1731,0.613357399,Male
+222,JIG:SAW Employee,Technicians,15.25,1198,1.193186337,Male
+223,JIG:SAW Employee,Technicians,14.03,1173,1.099868265,Female
+224,Non-Employee,Technicians,15.69,1045,0.682216156,Female
+225,Non-Employee,Technicians,11.1,1139,0.411933404,Female
+226,JIG:SAW Employee,Technicians,17.71,1115,0.450537924,Female
+227,JIG:SAW Employee,Technicians,16.28,1291,0.97651758,Male
+228,JIG:SAW Employee,Technicians,14.19,1175,0.720078005,Female
+229,JIG:SAW Employee,Technicians,16.58,1144,0.662456113,Female
+230,Non-Employee,Technicians,15.23,1416,0.52542427,Male
+231,Non-Employee,Technicians,11.48,1146,0.805906378,Female
+232,Non-Employee,Technicians,11.47,1099,0.577726591,Female
+233,JIG:SAW Employee,Code 1318,1.33,1026,0.232760968,Female
+234,JIG:SAW Employee,Technicians,13.54,1134,1.247292489,Female
+235,Non-Employee,Technicians,13.36,1764,0.97979339,Male
+236,JIG:SAW Employee,Technicians,14.15,1382,0.837489411,Male
+237,JIG:SAW Employee,Technicians,11.48,1719,0.845217148,Male
+238,JIG:SAW Employee,Technicians,14.12,1175,1.142031842,Female
+239,JIG:SAW Employee,Code 1318,12.93,1322,0.13,Female
+240,Non-Employee,Technicians,12.93,1227,0.470623906,Female

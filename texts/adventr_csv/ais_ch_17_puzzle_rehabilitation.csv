@@ -1,0 +1,29 @@
+﻿ID,Species,Therapy,Resemblance
+1,Zombie,C-Gene,48
+2,Zombie,C-Gene,62
+3,Zombie,C-Gene,63
+4,Zombie,C-Gene,57
+5,Zombie,C-Gene,48
+6,Zombie,C-Gene,60
+7,Zombie,C-Gene,59
+8,Zombie,C-Gene + Toggle Switch,53
+9,Zombie,C-Gene + Toggle Switch,100
+10,Zombie,C-Gene + Toggle Switch,60
+11,Zombie,C-Gene + Toggle Switch,100
+12,Zombie,C-Gene + Toggle Switch,63
+13,Zombie,C-Gene + Toggle Switch,70
+14,Zombie,C-Gene + Toggle Switch,74
+15,Human,C-Gene,75
+16,Human,C-Gene,62
+17,Human,C-Gene,56
+18,Human,C-Gene,43
+19,Human,C-Gene,34
+20,Human,C-Gene,41
+21,Human,C-Gene,55
+22,Human,C-Gene + Toggle Switch,89
+23,Human,C-Gene + Toggle Switch,79
+24,Human,C-Gene + Toggle Switch,75
+25,Human,C-Gene + Toggle Switch,96
+26,Human,C-Gene + Toggle Switch,85
+27,Human,C-Gene + Toggle Switch,85
+28,Human,C-Gene + Toggle Switch,78

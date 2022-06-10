@@ -1,0 +1,19 @@
+﻿ID,Recall,Interference
+1,6,No Interference
+2,8,No Interference
+3,8,No Interference
+4,10,No Interference
+5,7,No Interference
+6,8,No Interference
+7,6,Unrelated Interference
+8,4,Unrelated Interference
+9,8,Unrelated Interference
+10,6,Unrelated Interference
+11,4,Unrelated Interference
+12,3,Unrelated Interference
+13,1,Related Interference
+14,0,Related Interference
+15,5,Related Interference
+16,2,Related Interference
+17,5,Related Interference
+18,3,Related Interference

@@ -1,0 +1,33 @@
+﻿ID,Picture,Gene,Resemblance
+1,Self,C-Gene,43
+2,Self,C-Gene,72
+3,Self,C-Gene,44
+4,Self,C-Gene,37
+5,Self,C-Gene,61
+6,Self,C-Gene,42
+7,Self,C-Gene,59
+8,Self,C-Gene,54
+9,Self,C-Gene + Toggle,75
+10,Self,C-Gene + Toggle,79
+11,Self,C-Gene + Toggle,87
+12,Self,C-Gene + Toggle,99
+13,Self,C-Gene + Toggle,85
+14,Self,C-Gene + Toggle,92
+15,Self,C-Gene + Toggle,87
+16,Self,C-Gene + Toggle,85
+17,Other,C-Gene,9
+18,Other,C-Gene,6
+19,Other,C-Gene,6
+20,Other,C-Gene,12
+21,Other,C-Gene,9
+22,Other,C-Gene,7
+23,Other,C-Gene,12
+24,Other,C-Gene,8
+25,Other,C-Gene + Toggle,80
+26,Other,C-Gene + Toggle,87
+27,Other,C-Gene + Toggle,88
+28,Other,C-Gene + Toggle,85
+29,Other,C-Gene + Toggle,93
+30,Other,C-Gene + Toggle,85
+31,Other,C-Gene + Toggle,86
+32,Other,C-Gene + Toggle,78
