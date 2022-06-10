@@ -11,7 +11,7 @@
 
 
 
-<title>언어심리학을 위한 데이터 사이언스 13주차: 문자열 #2</title>
+<title>언어심리학을 위한 데이터 사이언스 14주차: 문자열 #2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1601,7 +1601,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">언어심리학을 위한 데이터 사이언스 13주차:
+<h1 class="title toc-ignore">언어심리학을 위한 데이터 사이언스 14주차:
 문자열 #2</h1>
 <h3 class="subtitle">고려대학교 일반대학원 심리학과</h3>
 <h4 class="date">2022년 6월 6일 월요일 5-6교시</h4>
@@ -1630,11 +1630,11 @@ div.tocify {
 <li>음절 빈도 효과(syllable frequency effects): <strong>첫 음절을
 공유하는 단어들의 누적 토큰빈도</strong>가 높은 단어일수록 반응시간과
 오류율이 증가하는 현상.</li>
-<li>음절 이웃 빈도 효과(syllable neighborhood frequency
-effects)[^note1]: <strong>고빈도 음절 이웃(첫 음절을 공유하면서
-목표단어보다 토큰 빈도가 높은 단어)</strong>이 적은 단어를 재인할 때는
-음절 이웃 크기가 촉진효과를 나타냄. 그러나 고빈도 음절 이웃이 많은
-단어를 재인할 때는 음절 이웃 크기가 억제효과를 보임.</li>
+<li>음절 이웃 빈도 효과(syllable neighborhood frequency effects)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>:
+<strong>고빈도 음절 이웃(첫 음절을 공유하면서 목표단어보다 토큰 빈도가
+높은 단어)</strong>이 적은 단어를 재인할 때는 음절 이웃 크기가
+촉진효과를 나타냄. 그러나 고빈도 음절 이웃이 많은 단어를 재인할 때는
+음절 이웃 크기가 억제효과를 보임.</li>
 <li>컴퓨터 과학 알고리즘 기반 단어/어절 간 유사성 계산법
 <ul>
 <li>레벤슈타인 거리(Levenshtein distance, LD): 컴퓨터 과학 분야에서
@@ -1649,9 +1649,8 @@ effects)[^note1]: <strong>고빈도 음절 이웃(첫 음절을 공유하면서
 <li>삭제: 집필 <span class="math inline">\(\rightarrow\)</span> 지필. ㅂ
 <span class="math inline">\(\rightarrow\)</span> ø.</li>
 </ul></li>
-<li>철자적 레벤슈타인 거리(Orthographic Levenshtein Distance,
-OLD20)[^note2]: 한 단어와 가장 가까운 레벤슈타인 철자 이웃 20개 간의
-평균 레벤슈타인 거리.</li>
+<li>철자적 레벤슈타인 거리(Orthographic Levenshtein Distance, OLD20)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>: 한 단어와
+가장 가까운 레벤슈타인 철자 이웃 20개 간의 평균 레벤슈타인 거리.</li>
 <li>레벤슈타인 이웃 빈도: 가장 가까운 레벤슈타인 철자 이웃 20개의 평균
 빈도.</li>
 </ul></li>
@@ -1669,10 +1668,10 @@ OLD20)[^note2]: 한 단어와 가장 가까운 레벤슈타인 철자 이웃 20�
 <div id="여러-파일-동시에-불러와-처리하기" class="section level4">
 <h4>1) 여러 파일 동시에 불러와 처리하기</h4>
 <ul>
-<li><p>모든 말뭉치 원자료 파일명에 대한 목록 작성하기.</p></li>
-<li><p>여러 파일 한꺼번에 불러들이기: <strong>purrr</strong>의
+<li>모든 말뭉치 원자료 파일명에 대한 목록 작성하기.</li>
+<li>여러 파일 한꺼번에 불러들이기: <strong>purrr</strong>의
 <code>map</code> 함수를 이용하면 여러 파일을 한꺼번에 불러들일 수
-있음.</p></li>
+있음.</li>
 </ul>
 <pre class="r"><code>library(tidyverse)
 # 말뭉치 파일 목록 작성하기.
@@ -1835,7 +1834,7 @@ sejong.1 &lt;- sejong %&gt;%
 <pre class="r"><code># 불필요한 기호 제거하기.
 sejong.2 &lt;-  sejong.1 %&gt;%
   mutate(raw.ej = str_replace_all(raw.ej, &quot;\\W&quot;, &quot;&quot;),
-         tagged = str_replace_all(tagged, &quot; \\+ |\\W{1,100}/S[A-Z]{1,3}|[0-9]{1,100}/SN|/XSN&quot;, &quot;&quot;)) %&gt;%
+         tagged = str_replace_all(tagged, &quot; \\+ |\\W{1,100}/S[A-Z]{1,3}|[0-9]{1,100}/SN|\\w{1,100}/S[LH]|들/XSN&quot;, &quot;&quot;)) %&gt;%
   filter(raw.ej != &quot;&quot;) %&gt;%
   filter(tagged != &quot;&quot;)</code></pre>
 <ul>
@@ -1890,7 +1889,7 @@ whole.2gram.ov.bigram %&gt;%
 <pre><code>## # A tibble: 1 x 1
 ##   token_freq
 ##        &lt;int&gt;
-## 1      76130</code></pre>
+## 1      76131</code></pre>
 </div>
 <div id="타입-빈도-분석하기" class="section level4">
 <h4>2) 타입 빈도 분석하기</h4>
@@ -1900,7 +1899,7 @@ whole.2gram.ov.bigram %&gt;%
 </ul>
 <pre class="r"><code># 목적어 + 동사 바이그램의 가짓수.
 nrow(whole.2gram.ov.bigram) </code></pre>
-<pre><code>## [1] 48097</code></pre>
+<pre><code>## [1] 47923</code></pre>
 </div>
 </div>
 <div id="c.-문장구조-바이그램-누적-및-상대-빈도-분석하기" class="section level3">
@@ -1950,20 +1949,20 @@ whole.2gram.ov.nng &lt;- whole.2gram.ov %&gt;%
 
 # 명사 단어 토큰 빈도 분석하기: 자체 제작 함수 사용하기.
 bigram.freq(whole.2gram.ov$eojeol.1)</code></pre>
-<pre><code>## # A tibble: 18,059 x 6
+<pre><code>## # A tibble: 17,693 x 6
 ##     rank bigram              freq relative cum_relative cummulative
 ##    &lt;int&gt; &lt;chr&gt;              &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
 ##  1     1 문제__06/NNG를/JKO   406    0.533        0.533         406
 ##  2     2 관심__01/NNG을/JKO   339    0.445        0.979         745
-##  3     3 사실__04/NNG을/JKO   289    0.380        1.36         1034
-##  4     4 영향__04/NNG을/JKO   272    0.357        1.72         1306
-##  5     5 돈__01/NNG을/JKO     268    0.352        2.07         1574
-##  6     6 역할/NNG을/JKO       257    0.338        2.41         1831
-##  7     7 일__01/NNG을/JKO     250    0.328        2.73         2081
-##  8     8 입장__04/NNG을/JKO   235    0.309        3.04         2316
-##  9     9 조사__30/NNG를/JKO   226    0.297        3.34         2542
-## 10    10 모습__01/NNG을/JKO   223    0.293        3.63         2765
-## # ... with 18,049 more rows</code></pre>
+##  3     3 사실__04/NNG을/JKO   290    0.381        1.36         1035
+##  4     4 영향__04/NNG을/JKO   272    0.357        1.72         1307
+##  5     5 돈__01/NNG을/JKO     268    0.352        2.07         1575
+##  6     6 역할/NNG을/JKO       257    0.338        2.41         1832
+##  7     7 일__01/NNG을/JKO     256    0.336        2.74         2088
+##  8     8 입장__04/NNG을/JKO   236    0.310        3.05         2324
+##  9     9 조사__30/NNG를/JKO   227    0.298        3.35         2551
+## 10    10 모습__01/NNG을/JKO   225    0.296        3.65         2776
+## # ... with 17,683 more rows</code></pre>
 <pre class="r"><code># 동사 단어 토큰 빈도 분석하기: count 함수 사용하기.
 whole.2gram.ov.vv &lt;- whole.2gram.ov %&gt;%
   group_by(eojeol.2) %&gt;%
@@ -1973,7 +1972,7 @@ whole.2gram.ov.vv &lt;- whole.2gram.ov %&gt;%
 
 # 동사 단어 토큰 빈도 분석하기: 자체 제작 함수 사용하기.
 bigram.freq(whole.2gram.ov$eojeol.2)</code></pre>
-<pre><code>## # A tibble: 5,275 x 6
+<pre><code>## # A tibble: 5,261 x 6
 ##     rank bigram     freq relative cum_relative cummulative
 ##    &lt;int&gt; &lt;chr&gt;     &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
 ##  1     1 하/        3333    4.38          4.38        3333
@@ -1981,12 +1980,12 @@ bigram.freq(whole.2gram.ov$eojeol.2)</code></pre>
 ##  3     3 위하__01/  2174    2.86         10.5         8024
 ##  4     4 통하/      1671    2.19         12.7         9695
 ##  5     5 갖/        1054    1.38         14.1        10749
-##  6     6 보__01/     926    1.22         15.3        11675
-##  7     7 보이__02/   848    1.11         16.4        12523
-##  8     8 벌이/       747    0.981        17.4        13270
-##  9     9 가지/       702    0.922        18.4        13972
-## 10    10 내__02/     689    0.905        19.3        14661
-## # ... with 5,265 more rows</code></pre>
+##  6     6 보__01/     927    1.22         15.3        11676
+##  7     7 보이__02/   848    1.11         16.5        12524
+##  8     8 벌이/       747    0.981        17.4        13271
+##  9     9 가지/       702    0.922        18.4        13973
+## 10    10 내__02/     689    0.905        19.3        14662
+## # ... with 5,251 more rows</code></pre>
 <pre class="r"><code># 기존 데이터 프레임에 목적어 어절, 동사 어절, 바이그램의 빈도 열 추가하기.
 whole.2gram.ov.1 &lt;- whole.2gram.ov %&gt;%
   left_join(whole.2gram.ov.nng, by = &quot;eojeol.1&quot;) %&gt;%
@@ -2002,7 +2001,7 @@ whole.2gram.ov.1 &lt;- whole.2gram.ov %&gt;%
 whole.2gram.ov.1$eojeol.1 %&gt;%
   unique() %&gt;%
   length()</code></pre>
-<pre><code>## [1] 18059</code></pre>
+<pre><code>## [1] 17693</code></pre>
 <ul>
 <li>동사 어간 타입 빈도 추출하기.</li>
 </ul>
@@ -2010,7 +2009,7 @@ whole.2gram.ov.1$eojeol.1 %&gt;%
 whole.2gram.ov.1$eojeol.2 %&gt;%
   unique() %&gt;%
   length()</code></pre>
-<pre><code>## [1] 5275</code></pre>
+<pre><code>## [1] 5261</code></pre>
 </div>
 </div>
 <div id="b.-단어어절-누적-및-상대-빈도-분석하기" class="section level3">
@@ -2021,23 +2020,23 @@ whole.2gram.ov.1$eojeol.2 %&gt;%
 </ul>
 <pre class="r"><code># 명사 어절 토큰 빈도 분석하기: 자체 제작 함수 사용하기.
 bigram.freq(whole.2gram.ov$eojeol.1)</code></pre>
-<pre><code>## # A tibble: 18,059 x 6
+<pre><code>## # A tibble: 17,693 x 6
 ##     rank bigram              freq relative cum_relative cummulative
 ##    &lt;int&gt; &lt;chr&gt;              &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
 ##  1     1 문제__06/NNG를/JKO   406    0.533        0.533         406
 ##  2     2 관심__01/NNG을/JKO   339    0.445        0.979         745
-##  3     3 사실__04/NNG을/JKO   289    0.380        1.36         1034
-##  4     4 영향__04/NNG을/JKO   272    0.357        1.72         1306
-##  5     5 돈__01/NNG을/JKO     268    0.352        2.07         1574
-##  6     6 역할/NNG을/JKO       257    0.338        2.41         1831
-##  7     7 일__01/NNG을/JKO     250    0.328        2.73         2081
-##  8     8 입장__04/NNG을/JKO   235    0.309        3.04         2316
-##  9     9 조사__30/NNG를/JKO   226    0.297        3.34         2542
-## 10    10 모습__01/NNG을/JKO   223    0.293        3.63         2765
-## # ... with 18,049 more rows</code></pre>
+##  3     3 사실__04/NNG을/JKO   290    0.381        1.36         1035
+##  4     4 영향__04/NNG을/JKO   272    0.357        1.72         1307
+##  5     5 돈__01/NNG을/JKO     268    0.352        2.07         1575
+##  6     6 역할/NNG을/JKO       257    0.338        2.41         1832
+##  7     7 일__01/NNG을/JKO     256    0.336        2.74         2088
+##  8     8 입장__04/NNG을/JKO   236    0.310        3.05         2324
+##  9     9 조사__30/NNG를/JKO   227    0.298        3.35         2551
+## 10    10 모습__01/NNG을/JKO   225    0.296        3.65         2776
+## # ... with 17,683 more rows</code></pre>
 <pre class="r"><code># 동사 단어 토큰 빈도 분석하기: 자체 제작 함수 사용하기.
 bigram.freq(whole.2gram.ov$eojeol.2)</code></pre>
-<pre><code>## # A tibble: 5,275 x 6
+<pre><code>## # A tibble: 5,261 x 6
 ##     rank bigram     freq relative cum_relative cummulative
 ##    &lt;int&gt; &lt;chr&gt;     &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
 ##  1     1 하/        3333    4.38          4.38        3333
@@ -2045,12 +2044,12 @@ bigram.freq(whole.2gram.ov$eojeol.2)</code></pre>
 ##  3     3 위하__01/  2174    2.86         10.5         8024
 ##  4     4 통하/      1671    2.19         12.7         9695
 ##  5     5 갖/        1054    1.38         14.1        10749
-##  6     6 보__01/     926    1.22         15.3        11675
-##  7     7 보이__02/   848    1.11         16.4        12523
-##  8     8 벌이/       747    0.981        17.4        13270
-##  9     9 가지/       702    0.922        18.4        13972
-## 10    10 내__02/     689    0.905        19.3        14661
-## # ... with 5,265 more rows</code></pre>
+##  6     6 보__01/     927    1.22         15.3        11676
+##  7     7 보이__02/   848    1.11         16.5        12524
+##  8     8 벌이/       747    0.981        17.4        13271
+##  9     9 가지/       702    0.922        18.4        13973
+## 10    10 내__02/     689    0.905        19.3        14662
+## # ... with 5,251 more rows</code></pre>
 </div>
 </div>
 <div id="음절-빈도-분석" class="section level2">
@@ -2093,7 +2092,7 @@ syl.freq.token %&gt;%
 <pre><code>## # A tibble: 1 x 1
 ##   freq_sum
 ##      &lt;int&gt;
-## 1  4313633</code></pre>
+## 1  4313627</code></pre>
 <ul>
 <li>위치 고려: 음절 누적 및 상대 빈도 계산용 함수 직접 제작하기.</li>
 </ul>
@@ -2146,7 +2145,7 @@ syl.freq.type %&gt;%
 <pre><code>## # A tibble: 1 x 1
 ##   freq_sum
 ##      &lt;int&gt;
-## 1  1253817</code></pre>
+## 1  1253814</code></pre>
 <ul>
 <li>위치 고려 타입 빈도 분석하기.</li>
 </ul>
@@ -2208,16 +2207,16 @@ bigram.freq(whole.2gram.ov.nng10.1$NNG) %&gt;%
 ## # Groups:   syl_1 [10]
 ##    syl_1     n
 ##    &lt;chr&gt; &lt;int&gt;
-##  1 관       97
+##  1 관       90
 ##  2 돈        7
 ##  3 모       61
-##  4 문       85
-##  5 사      295
+##  4 문       82
+##  5 사      282
 ##  6 역       37
-##  7 영       98
-##  8 일       91
-##  9 입       64
-## 10 조      124</code></pre>
+##  7 영       95
+##  8 일       89
+##  9 입       62
+## 10 조      119</code></pre>
 </div>
 <div id="첫-음절-이웃-빈도토큰-빈도" class="section level4">
 <h4>2) 첫 음절 이웃 빈도(토큰 빈도)</h4>
@@ -2229,21 +2228,21 @@ syl.position(whole.2gram.ov.nng10.1$syl_1)</code></pre>
 <pre><code>## # A tibble: 10 x 7
 ##     rank syl    freq  norm relative cum_relative cummulative
 ##    &lt;int&gt; &lt;chr&gt; &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
-##  1     1 사     1810     0    25.2          25.2        1810
-##  2     2 조      873     0    12.2          37.3        2683
-##  3     3 관      826     0    11.5          48.8        3509
-##  4     4 문      826     0    11.5          60.3        4335
-##  5     5 영      671     0     9.34         69.7        5006
-##  6     6 일      550     0     7.66         77.3        5556
-##  7     7 입      466     0     6.49         83.8        6022
-##  8     8 역      455     0     6.33         90.2        6477
-##  9     9 모      431     0     6.00         96.2        6908
-## 10    10 돈      276     0     3.84        100          7184</code></pre>
+##  1     1 사     1813     0    25.2          25.2        1813
+##  2     2 조      874     0    12.2          37.4        2687
+##  3     3 관      826     0    11.5          48.9        3513
+##  4     4 문      826     0    11.5          60.4        4339
+##  5     5 영      671     0     9.33         69.7        5010
+##  6     6 일      550     0     7.65         77.3        5560
+##  7     7 입      466     0     6.48         83.8        6026
+##  8     8 역      455     0     6.33         90.2        6481
+##  9     9 모      432     0     6.01         96.2        6913
+## 10    10 돈      276     0     3.84        100          7189</code></pre>
 </div>
 <div id="컴퓨터-과학-알고리즘-기반-음절-이웃-계산법" class="section level4">
 <h4>3) 컴퓨터 과학 알고리즘 기반 음절 이웃 계산법</h4>
-<div id="가.-레벤슈타인-거리" class="section level5">
-<h5>가. 레벤슈타인 거리</h5>
+<div id="가.-레벤슈타인-이웃" class="section level5">
+<h5>가. 레벤슈타인 이웃</h5>
 <ul>
 <li><strong>vwr</strong> 패키지의 <code>levenshtein.neighbors</code>
 함수 이용.</li>
@@ -2251,9 +2250,9 @@ syl.position(whole.2gram.ov.nng10.1$syl_1)</code></pre>
 분해하는 함수 제작하기.</li>
 </ul>
 <pre class="r"><code>library(vwr) # 단어재인실험 관련 변수 제작용 패키지(레벤슈타인 거리, OLD20 등을 구해줌)
-library(utf8) # 문자를 UTF-8로 변환해주는 패키지.
+library(utf8) # 유니코드를 숫자 형식으로 변환해주는 패키지.
 
-# 말뭉치 모든 어절 letter 단위로 분해하기: 한글 음절 분해용 function 만들기
+# 방법 1: 유니코드 인코딩 규칙을 이용한 한글 음절 자모 분해용 function 만들기.
 
 initial &lt;- c(&#39;ㄱ&#39;, &#39;ㄲ&#39;, &#39;ㄴ&#39;, &#39;ㄷ&#39;, &#39;ㄸ&#39;, &#39;ㄹ&#39;, &#39;ㅁ&#39;, &#39;ㅂ&#39;, &#39;ㅃ&#39;, &#39;ㅅ&#39;, 
              &#39;ㅆ&#39;, &#39;@&#39;, &#39;ㅈ&#39;, &#39;ㅉ&#39;, &#39;ㅊ&#39;, &#39;ㅋ&#39;, &#39;ㅌ&#39;, &#39;ㅍ&#39;, &#39;ㅎ&#39;) # 모음으로 시작할 경우 &#39;@&#39;로 대체.
@@ -2269,13 +2268,22 @@ jaso.decom &lt;- function(syl_vector){
       a &lt;-  utf8ToInt(utf8_encode(letter))
       Chr_ord &lt;- a - 44032  # ord(&#39;가&#39;) = 44032
       ini_index &lt;- Chr_ord %/% (21*28) # 중성 21개, 종성 28
-      mid_index &lt;- (Chr_ord %/% 28) %% 21 # %/% 몫, %% 나머지
-      final_index &lt;- Chr_ord %% 28
+      mid_index &lt;- (Chr_ord %/% 28) %% 21 # %/% = 몫
+      final_index &lt;- Chr_ord %% 28 # %% = 나머지
       b &lt;- c(c(initial[ini_index+1], midial[mid_index+1], final[final_index+1]))
     } else
       b &lt;- c(letter) # 투입되는 입력이 한글이 아닌 경우 분해하지 말 것을 명령.
   }
   c &lt;- map(syl_vector, jaso.decom.letter)  
+}
+
+# 방법 2: KoNLP 패키지의 convertHangulStringToJamos 함수 사용하기(문제점: 초성과 종성의 ㅇ 구분 불가).
+library(KoNLP)
+jamo.decom.1 &lt;- function(syl_vecter){
+  jaso.decom.letter &lt;- map(syl_vecter, function(x) convertHangulStringToJamos(x)) %&gt;%
+    map(function(x) str_c(x, collapse = &quot;&quot;)) %&gt;%
+    unlist() 
+  jaso.decom.letter
 }</code></pre>
 <ul>
 <li>레벤슈타인 거리가 가장 가까운 이웃 구하기: 어절을 letter 단위로
@@ -2339,18 +2347,170 @@ old20.neigh &lt;- old20(whole.2gram.ov.nng10.3.top10$jamo_split_nng,
 old20.neigh.1 &lt;- as_tibble(old20.neigh) %&gt;%
   mutate(jamo_split = names(old20.neigh)) %&gt;%
   rename(old20 = value)</code></pre>
-<p>[^note1] Levenshtein, V. I. (1966). Binary codes capable of
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="언어단위-간-공기빈도-분석" class="section level1">
+<h1>2. 언어단위 간 공기빈도 분석</h1>
+<div id="단어어절-간-공기빈도-분석" class="section level2">
+<h2>(1) 단어/어절 간 공기빈도 분석</h2>
+<ul>
+<li>두 어절 간 공기빈도 분석을 위한 사전처리
+<ul>
+<li>어절 단위 말뭉치를 어절 바이그램(두 개의 어절) 단위로
+tokenizing하기.</li>
+<li>어절의 어미/조사 및 불필요한 기호 제거하기.</li>
+</ul></li>
+</ul>
+<pre class="r"><code># 어절 간 공기빈도 계산 위한 사전처리.
+load(&quot;whole.2gram.tb.rda&quot;) 
+whole.2gram.tb.collo &lt;- whole.2gram.tb %&gt;%
+  mutate(
+    eojeol.1 = str_replace_all(eojeol.1, &quot;[ㄱ-ㅎㅏ-ㅣ가-힣]{1,10}/E[A-Z]{1,3}|[ㄱ-ㅎㅏ-ㅣ가-힣]/J[A-Z]{1,3}|이/VCP&quot;, &quot;&quot;),
+    eojeol.2 = str_replace_all(eojeol.2, &quot;[ㄱ-ㅎㅏ-ㅣ가-힣]{1,10}/E[A-Z]{1,3}|[ㄱ-ㅎㅏ-ㅣ가-힣]/J[A-Z]{1,3}|이/VCP&quot;, &quot;&quot;),
+    bigram = str_c(eojeol.1, &quot; + &quot;, eojeol.2) 
+    ) %&gt;%
+  filter(str_length(eojeol.1) != 0 | str_length(eojeol.2) != 0 | eojeol.1 != &quot; + &quot; | eojeol.2 != &quot; + &quot;)</code></pre>
+<ul>
+<li>어절 바이그램 토큰 빈도 분석하기
+<ul>
+<li>방법 1: <strong>tidyverse</strong> 패키지의 <code>count</code>
+함수를 사용하여 바이그램 빈도 계산하기.</li>
+<li>방법 2: 자체 제작 함수를 사용하여 바이그램 빈도 계산하기.</li>
+</ul></li>
+</ul>
+<pre class="r"><code># 어절 바이그램 토큰 빈도 분석 1: tidyverse 패키지의 count 함수를 사용하는 경우.
+whole.2gram.tb.collo.1 &lt;- whole.2gram.tb.collo %&gt;%
+  group_by(bigram) %&gt;%
+  count() %&gt;%
+  arrange(desc(n)) %&gt;%
+  rename(freq_bi = n) %&gt;% # 개별 바이그램의 토큰 빈도.
+  ungroup()
+
+# 어절 바이그램 토큰 빈도 분석 2: 자체 제작 함수를 사용하는 경우.
+bigram.freq &lt;- function(bigram_vector){ # 바이그램 칼럼 벡터 투입하기.
+  bigram_vector %&gt;%
+    table() %&gt;%
+    as_tibble() %&gt;%
+    rename(bigram=&#39;.&#39;, freq=n) %&gt;%
+    arrange(desc(freq)) %&gt;%
+    mutate(rank = seq(1:length(freq))) %&gt;%
+    mutate(relative = freq * 100 / sum(freq), # 상대빈도
+           cummulative = cumsum(freq), # 누적빈도
+           cum_relative = cumsum(freq) * 100 / sum(freq)) %&gt;% # 누적 상대빈도
+    select(rank, bigram, freq, relative, cum_relative, cummulative)
+}
+
+# 어절 바이그램 벡터를 투입하여 어절 간 공기빈도 계산하기.
+collo.1 &lt;- bigram.freq(whole.2gram.tb.collo$bigram) </code></pre>
+</div>
+<div id="음절-간-공기빈도-분석" class="section level2">
+<h2>(2) 음절 간 공기빈도 분석</h2>
+<ul>
+<li>두 음절 간 공기빈도 분석을 위한 사전처리
+<ul>
+<li>형태의미 미분석 원어절을 음절 단위로 tokenizing하기.</li>
+<li>한국어 음절이 아닌 모든 단위([EX] 자모, 기호, 숫자, 외국어 등)
+제거하기.</li>
+</ul></li>
+<li>자체 제작 함수를 사용하여 바이그램 빈도 계산하기: 위치별 음절 벡터
+투업하기.</li>
+</ul>
+<pre class="r"><code># 위치별 음절 바이그램 토큰 빈도 분석: 자체 제작 함수를 사용하는 경우. 
+bigram.syl.freq &lt;- function(syl1, syl2){ # 위치별 음절 벡터 투입하기.
+  x &lt;- str_c(syl1, syl2)
+  subset(x, str_length(x) == 2) %&gt;%
+    table() %&gt;%
+    as_tibble() %&gt;%
+    rename(bigram=&#39;.&#39;, freq=n) %&gt;%
+    arrange(desc(freq)) %&gt;%
+    mutate(rank = seq(1:length(freq))) %&gt;%
+    mutate(relative = freq * 100 / sum(freq), # 상대빈도
+           cummulative = cumsum(freq), # 누적빈도
+           cum_relative = cumsum(freq) * 100 / sum(freq)) %&gt;% # 누적 상대빈도
+    select(rank, bigram, freq, relative, cum_relative, cummulative)
+}
+
+# 첫째 음절과 둘째 음절 간 공기빈도 계산하기.
+load(&quot;sejong.3.rda&quot;)
+bigram.syl.freq(sejong.3$syl_1, sejong.3$syl_2)</code></pre>
+<pre><code>## # A tibble: 17,210 x 6
+##     rank bigram  freq relative cum_relative cummulative
+##    &lt;int&gt; &lt;chr&gt;  &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
+##  1     1 있다    1938    1.04          1.04        1938
+##  2     2 것이    1505    0.808         1.85        3443
+##  3     3 있는    1221    0.656         2.50        4664
+##  4     4 우리    1126    0.605         3.11        5790
+##  5     5 그러     664    0.357         3.47        6454
+##  6     6 한국     619    0.332         3.80        7073
+##  7     7 경제     614    0.330         4.13        7687
+##  8     8 정부     613    0.329         4.46        8300
+##  9     9 한다     613    0.329         4.79        8913
+## 10    10 지난     562    0.302         5.09        9475
+## # ... with 17,200 more rows</code></pre>
+<pre class="r"><code># 둘째 음절과 셋째 음절 간 공기빈도 계산하기.
+bigram.syl.freq(sejong.3$syl_2, sejong.3$syl_3)</code></pre>
+<pre><code>## # A tibble: 19,302 x 6
+##     rank bigram  freq relative cum_relative cummulative
+##    &lt;int&gt; &lt;chr&gt;  &lt;int&gt;    &lt;dbl&gt;        &lt;dbl&gt;       &lt;int&gt;
+##  1     1 이다    1050    0.872        0.872        1050
+##  2     2 으로     989    0.822        1.69         2039
+##  3     3 러나     548    0.455        2.15         2587
+##  4     4 리는     504    0.419        2.57         3091
+##  5     5 다는     481    0.400        2.97         3572
+##  6     6 다고     476    0.396        3.36         4048
+##  7     7 에서     408    0.339        3.70         4456
+##  8     8 었다     328    0.273        3.98         4784
+##  9     9 국의     304    0.253        4.23         5088
+## 10    10 해서     293    0.243        4.47         5381
+## # ... with 19,292 more rows</code></pre>
+</div>
+<div id="어절-첫-음절-자모body-간-공기빈도-분석" class="section level2">
+<h2>(3) 어절 첫 음절 자모(body) 간 공기빈도 분석</h2>
+<ul>
+<li>어절 첫 음절의 두 자모 간 공기빈도 분석을 위한 사전처리
+<ul>
+<li>형태의미 미분석 원어절의 첫 음절을 자모 단위로 tokenizing하기.</li>
+<li>상기 결과 벡터를 기존 어절 데이터 프레임에 추가하기.</li>
+</ul></li>
+<li>자체 제작 함수를 사용하여 바이그램 빈도 계산하기: 어절 첫 음절의
+자모 벡터 투업하기.</li>
+</ul>
+<pre class="r"><code># 자체 제작 함수를 사용하여 어절 첫 음절의 자모(body) 분해하기.
+load(&quot;sejong.3.rda&quot;)
+jamo_split_syl1 &lt;- map(map(sejong.3$syl_1, jaso.decom), unlist) %&gt;%
+  map(function(x) str_c(x, collapse = &quot;&quot;)) %&gt;%
+  map_dfr(as_tibble) %&gt;%
+  rename(jamo_split_syl1 = value)
+
+# 기존 어절 데이터 프레임에 첫 음절 자모 분해 결과 벡터 칼럼 추가하기
+jamo.bigram &lt;- sejong.3 %&gt;%
+  bind_cols(jamo_split_syl1) %&gt;%
+  mutate(
+    jamo_1 = str_sub(jamo_split_syl1, 1, 1),
+    jamo_2 = str_sub(jamo_split_syl1, 2, 2),
+    jamo_3 = str_sub(jamo_split_syl1, 3, 3)
+    )
+
+# 어절 첫 음절의 자음과 모음 간 공기빈도(body 빈도) 계산하기.
+jamo.bigram.1 &lt;- bigram.syl.freq(jamo.bigram$jamo_1, jamo.bigram$jamo_2)</code></pre>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>Levenshtein, V. I. (1966). Binary codes capable of
 correcting dele- tions, insertions and reversals. <em>Soviet Physics
-Doklady, 10</em>, 707.</p>
-<p>[^note2] Yap, M. J., &amp; Balota, D. A. (2009). Visual word
+Doklady, 10</em>, 707.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Yap, M. J., &amp; Balota, D. A. (2009). Visual word
 recognition of multisyllabic words. <em>Journal of Memory and Language,
-60</em>(4), 502-529. Yarkoni, T., Balota, D., &amp; Yap, M. (2008).
-Moving beyond Coltheart’s N: A new measure of orthographic similarity.
-<em>Psychonomic Bulletin &amp; Review, 15</em>(5), 971-979.</p>
-</div>
-</div>
-</div>
-</div>
+60</em>(4), 502-529.<a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Yarkoni, T., Balota, D., &amp; Yap, M. (2008). Moving
+beyond Coltheart’s N: A new measure of orthographic similarity.
+<em>Psychonomic Bulletin &amp; Review, 15</em>(5), 971-979.<a href="#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 
