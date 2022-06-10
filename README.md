@@ -50,3 +50,7 @@
 ## 10. 14주차 수업자료: 문자열 #2
 
 * **[week14.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week14.html):** 14주차 수업자료: 문자열 #2. 해당 자료를 열람하려면 링크를 클릭할 것. 
+
+## 11. 14-15주차 수업자료: 문자열 #2
+
+* **[week14_1.html](http://cognitivepsychology.github.io/data_science_for_psycholinguistics/week14_1.html):** 14-15주차 수업자료: 말뭉치 #1. 해당 자료를 열람하려면 링크를 클릭할 것. 
