@@ -1727,7 +1727,7 @@ json_text.1 </code></pre>
 <h4>1) 단일 파일 불러와 처리하기</h4>
 <ul>
 <li><strong>XML</strong> 패키지의 <code>xmlParse</code> 함수를 사용하여
-단일 JSON 파일 불러들이기
+단일 XML 파일 불러들이기
 <ul>
 <li>파일 구조 파악 후 텍스트 자료가 포함된 부분 subsetting하기:
 <code>header</code>와 <code>text</code> 이렇게 두 노드가 있는데,
@@ -1842,10 +1842,7 @@ install_jdk()</code></pre>
                    &quot;sessioninfo&quot;, &quot;xopen&quot;, &quot;bit64&quot;, &quot;blob&quot;, &quot;DBI&quot;, &quot;memoise&quot;, 
                    &quot;plogr&quot;, &quot;covr&quot;, &quot;DT&quot;, &quot;rcmdcheck&quot;, &quot;rversions&quot;),
                  type = &quot;binary&quot;)</code></pre>
-<p><strong>4.</strong> github를 통해 패키지를 설치할 수 있게 해주는
-패키지 <strong>devtools</strong> 설치하기.</p>
-<pre class="r"><code>install.packages(&quot;devtools&quot;)</code></pre>
-<p><strong>5.</strong> <strong>KoNKP</strong> 패키지 설치하기.</p>
+<p><strong>4.</strong> <strong>KoNKP</strong> 패키지 설치하기.</p>
 <pre class="r"><code>library(devtools)
 install_github(&#39;haven-jeon/KoNLP&#39;, upgrade = &quot;never&quot;, INSTALL_opts=c(&quot;--no-multiarch&quot;))</code></pre>
 </div>
@@ -1994,7 +1991,7 @@ string1 %&gt;%
 </ul></li>
 <li><code>HangulAutomata</code>
 <ul>
-<li>자모 분해된 한글 문자열을 음절 단위 문자열로 복원헤줌.</li>
+<li>자모 분해된 한글 문자열을 음절 단위 문자열로 복원해줌.</li>
 <li>입력: 문자열 스칼라만 가능.</li>
 <li>출력: 결과를 벡터로 반환.</li>
 </ul></li>
@@ -2163,26 +2160,33 @@ string1.jamo</code></pre>
 <p><strong>1.</strong> <strong>RcppMeCab</strong> 및
 <strong>RmecabKo</strong> 패키지 설치하기.</p>
 <pre class="r"><code># CRAN을 통해 설치하기.
-install.packages(&quot;devtools&quot;) # 현재 CRAN 버전은 Rcpp 지원이 늦어 업그레이드를 못하고 있다고 함.
+install.packages(&quot;RcppMeCab&quot;) # 현재 CRAN 버전은 Rcpp 지원이 늦어 업그레이드를 못하고 있다고 함.
 install.packages(&quot;RmecabKo&quot;)
 
 # github를 통해 설치하기.
 library(devtools)
 install_github(&quot;junhewk/RcppMeCab&quot;)
 install_github(&quot;junhewk/RmecabKo&quot;)</code></pre>
-<p><strong>2.</strong> <code>MeCab</code> 프로그램과 사전 설치하기 -
-<code>MeCab</code> 프로그램: <a href="https://github.com/Pusnow/mecab-ko-msvc/releases/download/release-0.9.2-msvc-3/mecab-ko-msvc-x64.zip">mecab-ko-0.9.2-msvc-3</a>
-- <code>MeCab</code> 사전: <a href="https://github.com/Pusnow/mecab-ko-dic-msvc/releases/download/mecab-ko-dic-2.1.1-20180720-msvc-2/mecab-ko-dic-msvc.zip">mecab-ko-dic-2.1.1-20180720-msvc-2</a>
-- 디렉토리에 압축 해제하기 + 두 압축파일을 받아 <code>C:\mecab</code>
-디렉토리에 압축해체. + <code>C:\mecab</code>에 <code>mecabrc</code>
-파일과 <code>mecab-ko-dic</code> 디렉토리가 있어야 함.</p>
+<p><strong>2.</strong> <code>MeCab</code> 프로그램과 사전 설치하기</p>
+<ul>
+<li><p><code>MeCab</code> 프로그램: <a href="https://github.com/Pusnow/mecab-ko-msvc/releases/download/release-0.9.2-msvc-3/mecab-ko-msvc-x64.zip">mecab-ko-0.9.2-msvc-3</a></p></li>
+<li><p><code>MeCab</code> 사전: <a href="https://github.com/Pusnow/mecab-ko-dic-msvc/releases/download/mecab-ko-dic-2.1.1-20180720-msvc-2/mecab-ko-dic-msvc.zip">mecab-ko-dic-2.1.1-20180720-msvc-2</a></p></li>
+<li><p>디렉토리에 압축 해제하기</p>
+<ul>
+<li>두 압축파일을 받아 <code>C:\mecab</code> 디렉토리에 압축해체.</li>
+<li><code>C:\mecab</code>에 <code>mecabrc</code> 파일과
+<code>mecab-ko-dic</code> 디렉토리가 있어야 함.</li>
+</ul></li>
+</ul>
 </div>
 <div id="맥-사용자" class="section level4">
 <h4>2) 맥 사용자</h4>
-<p><strong>1.</strong> <code>MeCab</code> 프로그램과 사전 설치하기 -
-<code>MeCab</code> 프로그램: <a href="https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz">mecab-0.996-ko-0.9.2.tar.gz</a>에서
-- <code>MeCab</code> 사전: <a href="https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz">mecab-ko-dic-2.1.1-20180720.tar.gz</a>
-- 터미널 쉘에서 아래의 코드 실행하기.</p>
+<p><strong>1.</strong> <code>MeCab</code> 프로그램과 사전 설치하기</p>
+<ul>
+<li><p><code>MeCab</code> 프로그램: <a href="https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz">mecab-0.996-ko-0.9.2.tar.gz</a></p></li>
+<li><p><code>MeCab</code> 사전: <a href="https://bitbucket.org/eunjeon/mecab-ko-dic/downloads/mecab-ko-dic-2.1.1-20180720.tar.gz">mecab-ko-dic-2.1.1-20180720.tar.gz</a></p></li>
+<li><p>터미널 쉘에서 아래의 코드 실행하기.</p></li>
+</ul>
 <pre class="shell"><code># MeCab 프로그램 설치하기.
 $ wget https://bitbucket.org/eunjeon/mecab-ko/downloads/mecab-0.996-ko-0.9.2.tar.gz
 $ tar xzvf mecab-0.996-ko-0.9.2.tar.gz
@@ -2201,7 +2205,7 @@ $ sudo make install</code></pre>
 <p><strong>2.</strong> <strong>RcppMeCab</strong> 및
 <strong>RmecabKo</strong> 패키지 설치하기.</p>
 <pre class="r"><code># CRAN을 통해 설치하기.
-install.packages(&quot;devtools&quot;) # 현재 CRAN 버전은 Rcpp 지원이 늦어 업그레이드를 못하고 있다고 함.
+install.packages(&quot;RcppMeCab&quot;) # 현재 CRAN 버전은 Rcpp 지원이 늦어 업그레이드를 못하고 있다고 함.
 install.packages(&quot;RmecabKo&quot;)
 
 # github를 통해 설치하기.
